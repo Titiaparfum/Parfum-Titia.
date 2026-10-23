@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3ec">
+  <meta name="description" content="Parfum-Titia : un carnet de découvertes consacré aux parfums, aux saveurs, aux plantes aromatiques et aux conseils sensoriels.">
+  <title>Parfum-Titia — Le plaisir des sens</title>
+  <style>
+    :root {
+      --cream:#f8f3ec; --paper:#fffcf8; --ink:#29231f; --muted:#6f655d;
+      --wine:#743a4e; --wine-deep:#55283a; --rose:#e9cbd0;
+      --gold:#a67a45; --line:#e9e0d5; --sage:#718071;
+      --shadow:0 22px 60px rgba(70,39,42,.11);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth;scroll-padding-top:110px}
+    body {margin:0;color:var(--ink);background:var(--cream);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65}
+    a {color:inherit;text-decoration:none}
+    button {font:inherit}
+    button,a { -webkit-tap-highlight-color:transparent}
+    :focus-visible {outline:3px solid var(--gold);outline-offset:5px}
+    .container {width:min(1160px,calc(100% - 44px));margin-inline:auto}
+    .skip-link {position:absolute;left:12px;top:-100px;background:white;padding:10px 16px;z-index:1000}
+    .skip-link:focus {top:10px}
+    .eyebrow {display:inline-flex;align-items:center;gap:12px;font-size:.73rem;letter-spacing:.2em;text-transform:uppercase;font-weight:750;color:var(--wine)}
+    .eyebrow::before {content:"";width:26px;height:1px;background:currentColor}
+    .serif {font-family:Georgia,"Times New Roman",serif;font-weight:400}
+    h1,h2,h3,p {margin-top:0}
+    h2 {font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.15;font-weight:400;letter-spacing:-.035em}
+    .lede {color:var(--muted);max-width:620px}
+    .site-header {position:relative;z-index:10;background:rgba(248,243,236,.96);border-bottom:1px solid var(--line)}
+    .header-inner {min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand {display:flex;flex-direction:column;line-height:1.1;flex-shrink:0}
+    .brand-name {font-family:Georgia,"Times New Roman",serif;font-size:1.65rem;letter-spacing:-.065em;color:var(--wine-deep)}
+    .brand-tag {font-size:.64rem;text-transform:uppercase;letter-spacing:.24em;color:var(--muted);padding-top:8px}
+    .nav {display:flex;align-items:center;gap:clamp(15px,2.5vw,35px);font-size:.84rem;font-weight:650}
+    .nav a:not(.nav-cta):hover {color:var(--wine)}
+    .nav-cta,.button {display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:13px 23px;background:var(--wine);color:#fff;font-size:.84rem;font-weight:700;transition:transform .2s,background .2s,box-shadow .2s;border:1px solid var(--wine)}
+    .nav-cta:hover,.button:hover {background:var(--wine-deep);transform:translateY(-2px);box-shadow:0 10px 22px rgba(85,40,58,.16)}
+    .button.secondary {background:transparent;color:var(--wine);border-color:#b68c9a}
+    .button.secondary:hover {background:#f5e6e8}
+    .hero {overflow:hidden;position:relative;background:radial-gradient(ellipse at 94% 8%,#f2e2df 0%,transparent 52%),var(--cream)}
+    .hero-grid {min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:10px;padding-top:54px;padding-bottom:70px}
+    .hero-copy {position:relative;z-index:2;padding:35px 0}
+    .hero h1 {font-size:clamp(3.2rem,7vw,6.25rem);line-height:1.06;letter-spacing:-.057em;font-weight:400;margin:28px 0 25px;max-width:690px}
+    .hero h1 em {font-style:italic;color:var(--wine)}
+    .hero-copy p {color:#625952;font-size:1.05rem;max-width:480px;line-height:1.9;margin-bottom:30px}
+    .hero-actions {display:flex;flex-wrap:wrap;gap:12px}
+    .hero-micro {font-size:.72rem;color:#857970;margin-top:36px;letter-spacing:.06em}
+    .hero-art {position:relative;isolation:isolate;min-height:560px;display:grid;place-items:center}
+    .art-disc {position:absolute;width:min(100%,470px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fae9df,#e8babc 67%,#dca5af);box-shadow:inset -16px -28px 70px rgba(133,65,79,.1)}
+    .art-orbit {position:absolute;width:min(105%,510px);aspect-ratio:1;border:1px solid rgba(147,100,96,.3);border-radius:50%;transform:scale(1.12)}
+    .art-letter {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:clamp(19rem,33vw,31rem);font-weight:400;color:rgba(255,255,255,.27);line-height:1;transform:translateY(-15px);pointer-events:none}
+    .bottle {position:relative;z-index:2;width:218px;height:292px;margin-top:82px;border:3px solid rgba(255,255,255,.65);border-radius:24px 24px 32px 32px;background:linear-gradient(105deg,rgba(255,255,255,.65),rgba(252,218,193,.45) 32%,rgba(145,76,91,.35) 80%,rgba(255,255,255,.65));box-shadow:inset 14px 0 24px rgba(255,255,255,.4),inset -12px 0 27px rgba(102,39,60,.15),8px 36px 45px rgba(74,35,48,.22);display:flex;align-items:center;justify-content:center}
+    .bottle::before {content:"";position:absolute;left:72px;right:72px;top:-48px;height:51px;background:linear-gradient(90deg,#7b4f43,#bd9e74 32%,#d9bf8a 62%,#684c42);border-radius:8px 8px 3px 3px;box-shadow:0 -7px 0 #674736}
+    .bottle::after {content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.6);border-radius:13px 13px 23px 23px;pointer-events:none}
+    .bottle-label {background:rgba(252,247,236,.85);padding:26px 20px;width:80%;text-align:center;box-shadow:0 2px 16px rgba(82,44,46,.08)}
+    .bottle-label span {display:block;font-size:.55rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+    .bottle-label strong {display:block;color:var(--wine-deep);font-family:Georgia,serif;font-size:1.48rem;letter-spacing:-.06em;margin:7px 0;font-weight:400}
+    .botanical {position:absolute;z-index:3;width:155px;height:250px;opacity:.86;pointer-events:none}
+    .botanical.left {left:-8px;bottom:5px;transform:rotate(-15deg)}
+    .botanical.right {right:-15px;top:25px;transform:scaleX(-1) rotate(-4deg)}
+    .float-note {position:absolute;z-index:3;background:rgba(255,252,248,.9);border:1px solid rgba(255,255,255,.8);border-radius:15px;padding:12px 17px;box-shadow:var(--shadow);font-family:Georgia,serif;font-style:italic;color:var(--wine);font-size:.9rem}
+    .float-note.top {right:-6px;top:135px;transform:rotate(5deg)}
+    .float-note.bottom {left:0;bottom:91px;transform:rotate(-6deg)}
+    .marquee {background:var(--wine-deep);color:#f8eae8;padding:17px 0;text-align:center;letter-spacing:.18em;text-transform:uppercase;font-size:.7rem;font-weight:700}
+    .marquee span {padding-inline:15px;color:#dfb9a4}
+    .section {padding:108px 0}
+    .section-top {display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+    .section-top h2 {max-width:670px;margin:15px 0 0}
+    .section-top .lede {max-width:345px;margin-bottom:7px}
+    .univers-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .universe-card {background:var(--paper);border-radius:18px;overflow:hidden;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+    .universe-card:hover {transform:translateY(-5px);box-shadow:var(--shadow)}
+    .universe-art {height:250px;position:relative;overflow:hidden;display:grid;place-items:center}
+    .universe-art.perfume {background:radial-gradient(circle at 54% 48%,#f6e2df,#d9abb4)}
+    .universe-art.flavor {background:radial-gradient(circle at 46% 42%,#f7e5c7,#d9aa77)}
+    .universe-art.plants {background:radial-gradient(circle at 52% 45%,#dfe7ce,#a7bba5)}
+    .universe-art::before {content:"";width:185px;height:185px;border:1px solid rgba(255,255,255,.7);border-radius:50%;position:absolute}
+    .universe-symbol {font-family:Georgia,serif;font-style:italic;font-size:7rem;color:rgba(255,255,255,.82);text-shadow:0 10px 20px rgba(70,40,20,.1);position:relative;z-index:1}
+    .universe-art small {position:absolute;top:24px;left:26px;letter-spacing:.22em;font-size:.65rem;font-weight:800;color:#624e49}
+    .universe-body {padding:28px 28px 32px}
+    .universe-body h3 {font-family:Georgia,serif;font-weight:400;font-size:1.65rem;line-height:1.2;margin-bottom:12px}
+    .universe-body p {color:var(--muted);font-size:.91rem;margin:0}
+    .notebook {background:#f0e7de;border-block:1px solid #e8dcd0}
+    .filters {display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px}
+    .filter {cursor:pointer;background:transparent;border:1px solid #c9b8ad;border-radius:99px;padding:9px 16px;color:#5f534e;font-size:.84rem}
+    .filter[aria-pressed="true"],.filter:hover {background:var(--wine);border-color:var(--wine);color:#fff}
+    .notes-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .note {background:var(--paper);border:1px solid #e6dcd2;border-radius:16px;padding:30px;min-height:213px;display:flex;flex-direction:column;gap:10px}
+    .note[hidden] {display:none}
+    .note-label {color:var(--wine);font-size:.68rem;font-weight:750;letter-spacing:.17em;text-transform:uppercase}
+    .note h3 {font-family:Georgia,serif;font-size:1.44rem;line-height:1.25;font-weight:400;margin:1px 0}
+    .note p {color:var(--muted);font-size:.91rem;margin:0}
+    .signature {background:var(--wine-deep);color:#fffaf7;position:relative;overflow:hidden}
+    .signature::after {content:"";position:absolute;border:1px solid rgba(255,255,255,.09);width:560px;height:560px;border-radius:50%;right:-180px;top:-170px;box-shadow:0 0 0 100px rgba(255,255,255,.018),0 0 0 220px rgba(255,255,255,.012);pointer-events:none}
+    .signature-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:1}
+    .signature .eyebrow {color:#e7b9b3}
+    .signature h2 {font-size:clamp(2.5rem,5vw,4rem);margin:18px 0}
+    .signature .lede {color:#e9d8dc}
+    .scent-panel {background:#fbf6ef;color:var(--ink);padding:35px;border-radius:20px;box-shadow:var(--shadow)}
+    .scent-panel h3 {font-family:Georgia,serif;font-size:1.65rem;font-weight:400;margin-bottom:8px}
+    .scent-panel>p {color:var(--muted);font-size:.87rem}
+    .choices {display:flex;flex-wrap:wrap;gap:9px;margin:23px 0}
+    .choice {cursor:pointer;background:#fff;border:1px solid #d8c9c2;color:#65534f;padding:10px 14px;border-radius:999px;font-size:.84rem}
+    .choice:hover,.choice[aria-pressed="true"] {background:var(--wine);color:#fff;border-color:var(--wine)}
+    .scent-result {border-top:1px solid var(--line);padding-top:22px;min-height:126px}
+    .scent-result strong {font-family:Georgia,serif;font-size:1.35rem;font-weight:400;color:var(--wine)}
+    .scent-result p {color:var(--muted);font-size:.9rem;margin:9px 0 0}
+    .story-grid {display:grid;grid-template-columns:.75fr 1fr;align-items:center;gap:90px}
+    .story-visual {background:linear-gradient(135deg,#f2d5cb,#cbaaa7);border-radius:220px 220px 18px 18px;min-height:410px;position:relative;display:grid;place-items:center;overflow:hidden}
+    .story-visual::before,.story-visual::after {content:"";position:absolute;border:1px solid rgba(255,255,255,.75);border-radius:50%;width:320px;height:320px}
+    .story-visual::after {width:420px;height:420px}
+    .story-visual span {font:italic 9rem Georgia,serif;color:rgba(255,255,255,.86);z-index:1}
+    .story-copy p {color:var(--muted);font-size:1rem;max-width:600px}
+    .story-copy .eyebrow {margin-bottom:16px}
+    .site-footer {background:#30272a;color:#fff9f3;padding:53px 0 27px}
+    .footer-top {display:flex;justify-content:space-between;gap:25px;align-items:start;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.15)}
+    .footer-brand {font-family:Georgia,serif;font-size:2.2rem;color:#fff4ec;letter-spacing:-.06em}
+    .footer-top p {color:#d3c6c1;font-size:.85rem;max-width:360px}
+    .footer-nav {display:flex;gap:24px;flex-wrap:wrap;font-size:.84rem}
+    .footer-nav a:hover {color:#e4b7af}
+    .footer-bottom {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:.76rem;color:#bdafaa}
+    @media (max-width:940px) {
+      .nav {gap:15px}
+      .hero-grid {grid-template-columns:1fr 1fr;min-height:570px}
+      .hero-art {min-height:440px}
+      .art-disc {width:330px}
+      .art-orbit {width:360px}
+      .float-note.top {right:-14px}
+      .universe-art {height:200px}
+      .universe-body {padding:22px}
+      .signature-grid {gap:35px}
+      .story-grid {gap:40px}
+    }
+    @media (max-width:700px) {
+      .container {width:min(100% - 34px,540px)}
+      .header-inner {min-height:87px;flex-wrap:wrap;gap:9px;padding-block:15px}
+      .brand-name {font-size:1.5rem}
+      .nav {width:100%;justify-content:space-between;font-size:.75rem;gap:8px}
+      .nav-cta {display:none}
+      .hero-grid {grid-template-columns:1fr;padding-top:38px;padding-bottom:42px;gap:0}
+      .hero-copy {padding:7px 0 0}
+      .hero h1 {font-size:clamp(3.4rem,14vw,5.5rem);margin:24px 0 18px}
+      .hero-copy p {font-size:1rem;line-height:1.75}
+      .hero-micro {margin-top:24px}
+      .hero-art {min-height:390px}
+      .art-disc {width:316px}
+      .art-orbit {width:340px}
+      .art-letter {font-size:20rem}
+      .bottle {transform:scale(.78);margin-top:45px}
+      .botanical.left {left:0;bottom:-15px;transform:scale(.73) rotate(-15deg)}
+      .botanical.right {right:-8px;top:18px;transform:scale(.76) scaleX(-1)}
+      .float-note.top {top:72px;right:0}
+      .float-note.bottom {bottom:55px;left:0}
+      .marquee {font-size:.62rem;line-height:1.9;padding:12px}
+      .section {padding:73px 0}
+      .section-top {display:block;margin-bottom:26px}
+      .section-top .lede {margin-top:17px}
+      .univers-grid,.notes-grid,.signature-grid,.story-grid {grid-template-columns:1fr}
+      .univers-grid {gap:15px}
+      .universe-art {height:210px}
+      .notes-grid {gap:12px}
+      .note {min-height:0;padding:24px}
+      .signature-grid {gap:25px}
+      .scent-panel {padding:25px}
+      .story-grid {gap:32px}
+      .story-visual {min-height:310px}
+      .footer-top {display:block}
+      .footer-nav {margin-top:22px}
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html {scroll-behavior:auto}
+      *,*::before,*::after {transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#accueil" aria-label="Parfum-Titia, accueil">
+        <span class="brand-name">Parfum-Titia<span aria-hidden="true">.</span></span>
+        <span class="brand-tag">Carnet sensoriel</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#univers">Univers</a>
+        <a href="#carnet">Le carnet</a>
+        <a href="#signature">Mon sillage</a>
+        <a href="#histoire">À propos</a>
+        <a class="nav-cta" href="#univers">Découvrir <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="titre">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Bienvenue chez Parfum-Titia</span>
+          <h1 class="serif" id="titre">L'art de <em>ressentir</em> le monde.</h1>
+          <p>Un lieu de curiosité et de partage, où les parfums rencontrent les saveurs, les plantes aromatiques et le plaisir de la découverte.</p>
+          <div class="hero-actions">
+            <a class="button" href="#univers">Explorer mes univers <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#signature">Trouver une inspiration</a>
+          </div>
+          <div class="hero-micro">SENTIR &nbsp; · &nbsp; GOÛTER &nbsp; · &nbsp; DÉCOUVRIR</div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Illustration d'un flacon de parfum aux couleurs rosées, entouré de feuillage">
+          <div class="art-orbit"></div><div class="art-disc"></div><div class="art-letter">T</div>
+          <svg class="botanical left" viewBox="0 0 155 250" fill="none" aria-hidden="true">
+            <path d="M68 248C76 192 74 128 106 16" stroke="#6E7959" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M82 172C28 175 12 145 22 113C59 111 85 136 82 172Z" fill="#71836B" opacity=".8"/>
+            <path d="M88 139C139 124 143 92 133 74C105 85 84 107 88 139Z" fill="#677E60" opacity=".88"/>
+            <path d="M98 87C57 74 48 46 60 26C83 37 105 59 98 87Z" fill="#8A9772" opacity=".82"/>
+            <path d="M73 215C113 221 128 201 134 179C100 173 77 187 73 215Z" fill="#91A183" opacity=".8"/>
+          </svg>
+          <div class="bottle"><div class="bottle-label"><span>Maison de découvertes</span><strong>Parfum-Titia</strong><span>Le plaisir des sens</span></div></div>
+          <svg class="botanical right" viewBox="0 0 155 250" fill="none" aria-hidden="true">
+            <path d="M68 248C76 192 74 128 106 16" stroke="#7C795F" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M82 172C28 175 12 145 22 113C59 111 85 136 82 172Z" fill="#A5A083" opacity=".72"/>
+            <path d="M88 139C139 124 143 92 133 74C105 85 84 107 88 139Z" fill="#85896F" opacity=".72"/>
+            <path d="M98 87C57 74 48 46 60 26C83 37 105 59 98 87Z" fill="#C5B79B" opacity=".82"/>
+          </svg>
+          <div class="float-note top">Une note à la fois…</div>
+          <div class="float-note bottom">Laissez parler les sens</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee">Parfums <span>✦</span> Saveurs <span>✦</span> Plantes aromatiques <span>✦</span> Conseils & découvertes</div>
+
+    <section class="section" id="univers" aria-labelledby="titre-univers">
+      <div class="container">
+        <div class="section-top">
+          <div><span class="eyebrow">01 — Les univers</span><h2 id="titre-univers">Des découvertes qui éveillent les sens.</h2></div>
+          <p class="lede">Trois portes d'entrée, une même passion : explorer ce qui nous touche, nous surprend et nous inspire.</p>
+        </div>
+        <div class="univers-grid">
+          <article class="universe-card">
+            <div class="universe-art perfume" aria-hidden="true"><small>01 / OLFACTIF</small><span class="universe-symbol">P</span></div>
+            <div class="universe-body"><h3>Parfums & sillages</h3><p>Notes, accords, intensité et émotions : apprendre à reconnaître les parfums qui marquent les esprits.</p></div>
+          </article>
+          <article class="universe-card">
+            <div class="universe-art flavor" aria-hidden="true"><small>02 / GUSTATIF</small><span class="universe-symbol">S</span></div>
+            <div class="universe-body"><h3>Saveurs & gourmandises</h3><p>Vanille, épices, fruits et associations inattendues : savourer la richesse des découvertes gustatives.</p></div>
+          </article>
+          <article class="universe-card">
+            <div class="universe-art plants" aria-hidden="true"><small>03 / BOTANIQUE</small><span class="universe-symbol">V</span></div>
+            <div class="universe-body"><h3>Plantes aromatiques</h3><p>Du jardin aux petits rituels du quotidien, découvrir les plantes et leurs parfums naturels.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notebook" id="carnet" aria-labelledby="titre-carnet">
+      <div class="container">
+        <span class="eyebrow">02 — Le carnet</span>
+        <h2 id="titre-carnet" style="margin:16px 0 9px">Quelques pistes à explorer.</h2>
+        <p class="lede">De premières notes pour ouvrir la conversation. Ce carnet grandira avec de nouvelles découvertes.</p>
+        <div class="filters" role="group" aria-label="Filtrer les notes du carnet">
+          <button class="filter" type="button" data-filter="tous" aria-pressed="true">Tout voir</button>
+          <button class="filter" type="button" data-filter="parfums" aria-pressed="false">Parfums</button>
+          <button class="filter" type="button" data-filter="saveurs" aria-pressed="false">Saveurs</button>
+          <button class="filter" type="button" data-filter="plantes" aria-pressed="false">Plantes</button>
+          <button class="filter" type="button" data-filter="conseils" aria-pressed="false">Conseils</button>
+        </div>
+        <div class="notes-grid" id="notes">
+          <article class="note" data-category="parfums conseils">
+            <span class="note-label">Parfums · Conseils</span><h3>Trouver son parfum signature</h3>
+            <p>Essayez une fragrance sur la peau et laissez-la évoluer plusieurs heures : les premières notes ne racontent pas toute son histoire.</p>
+          </article>
+          <article class="note" data-category="parfums">
+            <span class="note-label">Parfums</span><h3>Le sillage n'est pas la tenue</h3>
+            <p>La tenue décrit le temps pendant lequel vous sentez un parfum ; le sillage évoque l'empreinte qu'il laisse autour de vous.</p>
+          </article>
+          <article class="note" data-category="saveurs">
+            <span class="note-label">Saveurs</span><h3>La vanille, tout un univers</h3>
+            <p>Chaleureuse et délicate, la vanille se retrouve aussi bien dans les créations gourmandes que dans certains accords de parfumerie.</p>
+          </article>
+          <article class="note" data-category="plantes conseils">
+            <span class="note-label">Plantes · Conseils</span><h3>Un jardin à sentir</h3>
+            <p>Menthe, basilic et citronnelle offrent des profils aromatiques différents. Froissez doucement une feuille pour les comparer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section signature" id="signature" aria-labelledby="titre-signature">
+      <div class="container signature-grid">
+        <div>
+          <span class="eyebrow">03 — L'expérience olfactive</span>
+          <h2 id="titre-signature">Et si l'on suivait son instinct&nbsp;?</h2>
+          <p class="lede">Chaque famille olfactive raconte une atmosphère différente. Choisissez celle qui vous attire aujourd'hui et découvrez son caractère.</p>
+        </div>
+        <div class="scent-panel">
+          <h3>Quelle ambiance vous ressemble&nbsp;?</h3>
+          <p>Touchez une famille pour découvrir son univers.</p>
+          <div class="choices" role="group" aria-label="Choisir une famille olfactive">
+            <button type="button" class="choice" data-scent="floral" aria-pressed="false">Floral</button>
+            <button type="button" class="choice" data-scent="ambre" aria-pressed="true">Ambré</button>
+            <button type="button" class="choice" data-scent="boise" aria-pressed="false">Boisé</button>
+            <button type="button" class="choice" data-scent="gourmand" aria-pressed="false">Gourmand</button>
+            <button type="button" class="choice" data-scent="frais" aria-pressed="false">Frais</button>
+          </div>
+          <div class="scent-result" aria-live="polite" aria-atomic="true">
+            <strong id="scent-title">Ambré — enveloppant & chaleureux</strong>
+            <p id="scent-text">Imaginez des notes résineuses, douces et épicées, une atmosphère riche et réconfortante.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="histoire" aria-labelledby="titre-histoire">
+      <div class="container story-grid">
+        <div class="story-visual" aria-hidden="true"><span>T.</span></div>
+        <div class="story-copy">
+          <span class="eyebrow">04 — À propos</span>
+          <h2 id="titre-histoire">Bienvenue dans mon carnet de curiosités.</h2>
+          <p>Parfum-Titia est né de l'envie de partager des découvertes olfactives et gustatives, mais aussi de parler de plantes aromatiques et de petits conseils du quotidien.</p>
+          <p>Ici, il n'y a pas une seule manière d'aimer un parfum ou une saveur. Il y a des sensibilités, des souvenirs, des essais et toujours quelque chose de nouveau à explorer.</p>
+          <a class="button secondary" href="#accueil">Revenir au début <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Parfum-Titia.</div>
+          <p>Un carnet dédié aux parfums, aux découvertes olfactives et gustatives, aux plantes aromatiques et aux conseils.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation du pied de page">
+          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> Parfum-Titia.</span><span>Imaginé pour le plaisir des sens.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.filter');
+      var notes = document.querySelectorAll('.note');
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var selected = button.getAttribute('data-filter');
+          buttons.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+          notes.forEach(function (note) {
+            var categories = (note.getAttribute('data-category') || '').split(' ');
+            note.hidden = selected !== 'tous' && categories.indexOf(selected) === -1;
+          });
+        });
+      });
+      var descriptions = {
+        floral: ['Floral — délicat & expressif','Rose, jasmin, fleur d’oranger : une palette qui va de la fraîcheur légère à l’opulence.'],
+        ambre: ['Ambré — enveloppant & chaleureux','Imaginez des notes résineuses, douces et épicées, une atmosphère riche et réconfortante.'],
+        boise: ['Boisé — profond & élégant','Santal, cèdre ou vétiver : des matières qui évoquent le bois, la terre et les paysages apaisants.'],
+        gourmand: ['Gourmand — généreux & régressif','Vanille, caramel ou cacao : des facettes qui rappellent les douceurs et les souvenirs gourmands.'],
+        frais: ['Frais — vif & lumineux','Agrumes, notes vertes et accords aquatiques : une impression de clarté et de légèreté.']
+      };
+      var scentButtons = document.querySelectorAll('.choice');
+      scentButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          scentButtons.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+          var chosen = descriptions[button.getAttribute('data-scent')];
+          if (chosen) {
+            document.getElementById('scent-title').textContent = chosen[0];
+            document.getElementById('scent-text').textContent = chosen[1];
+          }
+        });
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }());
+  </script>
+</body>
+</html>
