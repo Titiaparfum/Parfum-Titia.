@@ -767,7 +767,17 @@
         button.addEventListener('click', function () { setLanguage(button.getAttribute('data-language')); });
       });
       document.querySelectorAll('.choice').forEach(function (button) {
-        button.addEventListener('click', function () { setLanguage(currentLanguage); });
+        button.addEventListener('click', function () {
+          // Le sélecteur d'accords modifie le texte : mémoriser son nouveau contenu
+          // français avant de remettre la traduction choisie.
+          ['scent-title', 'scent-text'].forEach(function (id) {
+            var target = document.getElementById(id);
+            if (target && target.firstChild) {
+              originals.set(target.firstChild, target.textContent);
+            }
+          });
+          setLanguage(currentLanguage);
+        });
       });
       var saved = 'fr';
       try { saved = localStorage.getItem('parfum-titia-language') || 'fr'; } catch (error) {}
