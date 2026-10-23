@@ -132,6 +132,20 @@
     @media (max-width:1050px){.perfume-card{grid-template-columns:1fr}.perfume-art{min-height:205px}.perfume-illustration{width:108px;height:145px}.layering-grid{grid-template-columns:1fr 1fr}}
     @media (max-width:700px){.perfume-feature{margin-top:45px;padding-top:37px}.perfume-grid,.layering-grid{grid-template-columns:1fr}.perfume-card{grid-template-columns:36% 64%}.perfume-art{min-height:235px;padding:8px}.perfume-illustration{width:78%;min-width:62px;height:135px}.perfume-info{padding:18px 15px}.perfume-info h4{font-size:1.2rem}.perfume-illustration strong{font-size:.79rem}.perfume-illustration span{font-size:.5rem}.layering-heading{margin-top:38px}}
     @media (max-width:390px){.perfume-card{grid-template-columns:1fr}.perfume-art{min-height:190px}.perfume-illustration{width:105px}}
+
+    /* Photo personnelle de quatre flacons : une seule image découpée en quatre vues.
+       Les illustrations existantes restent visibles tant que le fichier photo n'est pas publié. */
+    .perfume-art.photo-ready{padding:0;background:var(--paper);min-height:240px}
+    .perfume-art.photo-ready .perfume-illustration{display:none}
+    .perfume-art.photo-ready::after{
+      content:"";display:block;width:100%;aspect-ratio:1;align-self:center;justify-self:center;
+      background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;
+      border-radius:14px
+    }
+    .perfume-art-tonka.photo-ready::after{background-position:0% 0%}
+    .perfume-art-tobacco.photo-ready::after{background-position:100% 0%}
+    .perfume-art-arena.photo-ready::after{background-position:0% 100%}
+    .perfume-art-oud.photo-ready::after{background-position:100% 100%}
     .signature {background:var(--wine-deep);color:#fffaf7;position:relative;overflow:hidden}
     .signature::after {content:"";position:absolute;border:1px solid rgba(255,255,255,.09);width:560px;height:560px;border-radius:50%;right:-180px;top:-170px;box-shadow:0 0 0 100px rgba(255,255,255,.018),0 0 0 220px rgba(255,255,255,.012);pointer-events:none}
     .signature-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:1}
@@ -487,6 +501,16 @@
 
   <script>
     (function () {
+
+      // Dès que la photo personnelle est présente à la racine du site,
+      // afficher les quatre vues en remplacement des illustrations de secours.
+      var personalCollage = new Image();
+      personalCollage.addEventListener('load', function () {
+        document.querySelectorAll('.perfume-feature .perfume-art').forEach(function (art) {
+          art.classList.add('photo-ready');
+        });
+      });
+      personalCollage.src = 'mes-quatre-parfums.webp';
       var buttons = document.querySelectorAll('.filter');
       var notes = document.querySelectorAll('.note');
       buttons.forEach(function (button) {
