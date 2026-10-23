@@ -1,2 +1,2 @@
 # Parfum-Titia.
-Mon site dédié au Parfum aux découvertes olfactif et gustatif aux habits et au Conseil
+Mon site dédié aux parfums, aux découvertes olfactives et gustatives, aux plantes aromatiques et aux conseils.
