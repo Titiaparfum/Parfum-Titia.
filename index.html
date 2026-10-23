@@ -163,6 +163,17 @@
     .collection-photo.photo-2{background-position-x:50%}
     .collection-photo.photo-3{background-position-x:75%}
     .collection-photo.photo-4{background-position-x:100%}
+    /* Quatre photographies du carnet intégrées au classement olfactif. */
+    .collection-photo.featured-photo{display:grid;place-items:center;background-image:none;background-color:#f3e8df;padding:8px}
+    .collection-photo.featured-photo::before{content:"";display:block;width:100%;max-width:180px;aspect-ratio:1;background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;border-radius:12px}
+    .collection-photo.featured-tonka::before{background-position:0% 0%}
+    .collection-photo.featured-tobacco::before{background-position:100% 0%}
+    .collection-photo.featured-arena::before{background-position:0% 100%}
+    .collection-photo.featured-oud::before{background-position:100% 100%}
+    .collection-feature-link{display:inline-block;color:var(--wine);font-weight:750;font-size:.8rem;text-decoration:underline;text-underline-offset:3px;margin-top:5px}
+    .collection-feature-link:hover{color:var(--wine-deep)}
+    .perfume-family-line{color:var(--wine)!important;font-size:.76rem!important;font-weight:700;margin:-5px 0 11px!important}
+    .perfume-card[id]{scroll-margin-top:25px}
     .collection-copy{padding:20px 20px 16px;min-width:0}
     .collection-copy h3{font:400 1.38rem/1.2 Georgia,serif;margin:5px 0 9px}
     .collection-copy p,.collection-copy details p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:0 0 10px}
@@ -388,7 +399,7 @@
             <p class="lede">J'aime les parfums riches, opulents et les sillages qui se remarquent. Voici quatre flacons de mon univers, leurs notes et mes impressions personnelles.</p>
           </div>
           <div class="perfume-grid">
-            <article class="perfume-card">
+            <article class="perfume-card" id="fiche-arabians-tonka">
               <div class="perfume-art perfume-art-tonka" role="img" aria-label="Photographie du parfum Arabians Tonka">
                 <div class="perfume-illustration" aria-hidden="true"><span>Montale</span><strong>Arabians Tonka</strong></div>
               </div>
@@ -396,15 +407,18 @@
                 <span class="note-label">Montale</span>
                 <h4>Arabians Tonka</h4>
                 <p>Un accord ambré, gourmand, rosé et boisé, au caractère affirmé.</p>
+                <p class="perfume-family-line"><span class="collection-lang-fr">Ambré · gourmand · boisé · floral</span><span class="collection-lang-en">Amber · gourmand · woody · floral</span></p>
                 <details class="perfume-details">
                   <summary>Découvrir les notes et mon avis</summary>
-                  <p>Notes principales : Bergamote, safran, rose, oud, ambre, fève tonka, cuir et sucre brun.</p>
+                  <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Bergamote, safran</span><span class="collection-lang-en">Bergamot, saffron</span></p>
+                  <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Rose, oud</span><span class="collection-lang-en">Rose, oud</span></p>
+                  <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Ambre, mousse de chêne, fève tonka, cuir, sucre brun, musc blanc</span><span class="collection-lang-en">Amber, oakmoss, tonka bean, leather, brown sugar, white musk</span></p>
                   <p>Mon ressenti : J'aime sa richesse, mais je le trouve moins puissant que je ne l'espérais.</p>
                   <a href="https://www.montaleparfums.com/fr/oriental/282-arabians-tonka.html" target="_blank" rel="noopener noreferrer">Notes officielles de la marque ↗</a>
                 </details>
               </div>
             </article>
-            <article class="perfume-card">
+            <article class="perfume-card" id="fiche-intense-red-tobacco">
               <div class="perfume-art perfume-art-tobacco" role="img" aria-label="Photographie du parfum Intense Red Tobacco">
                 <div class="perfume-illustration" aria-hidden="true"><span>Mancera</span><strong>Intense Red Tobacco</strong></div>
               </div>
@@ -412,15 +426,18 @@
                 <span class="note-label">Mancera</span>
                 <h4>Intense Red Tobacco</h4>
                 <p>Tabac épicé, cuir et bois : un caractère chaud et fumé.</p>
+                <p class="perfume-family-line"><span class="collection-lang-fr">Tabac · ambré · boisé · vanillé</span><span class="collection-lang-en">Tobacco · amber · woody · vanilla</span></p>
                 <details class="perfume-details">
                   <summary>Découvrir les notes et mon avis</summary>
-                  <p>Notes principales : Safran, cannelle, encens, poire, tabac, cuir, patchouli, ambre et vanille.</p>
+                  <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Safran, cannelle, encens, noix de muscade, poire</span><span class="collection-lang-en">Saffron, cinnamon, incense, nutmeg, pear</span></p>
+                  <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Cuir, tabac, feuilles de patchouli, vétiver, jasmin</span><span class="collection-lang-en">Leather, tobacco, patchouli leaves, vetiver, jasmine</span></p>
+                  <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Ambre, notes boisées, vanille, musc blanc</span><span class="collection-lang-en">Amber, woody notes, vanilla, white musk</span></p>
                   <p>Mon ressenti : Je l'aime en association, même si sa projection seule ne dépasse pas mes attentes.</p>
                   <a href="https://www.manceraparfums.com/fr/oriental/118-286-intense-red-tobacco.html" target="_blank" rel="noopener noreferrer">Notes officielles de la marque ↗</a>
                 </details>
               </div>
             </article>
-            <article class="perfume-card">
+            <article class="perfume-card" id="fiche-arena-intense">
               <div class="perfume-art perfume-art-arena" role="img" aria-label="Photographie du parfum Lueur d’Espoir Arena Intense">
                 <div class="perfume-illustration" aria-hidden="true"><span>Paris Corner · Emir</span><strong>Lueur d’Espoir Arena Intense</strong></div>
               </div>
@@ -428,15 +445,18 @@
                 <span class="note-label">Paris Corner · Emir</span>
                 <h4>Lueur d’Espoir Arena Intense</h4>
                 <p>Une facette épicée et ambrée, adoucie par le musc et les bois.</p>
+                <p class="perfume-family-line"><span class="collection-lang-fr">Ambré · épicé · boisé · musqué</span><span class="collection-lang-en">Amber · spicy · woody · musky</span></p>
                 <details class="perfume-details">
                   <summary>Découvrir les notes et mon avis</summary>
-                  <p>Notes principales : Bergamote, safran, poivre noir, poire, rose, ambre, musc, santal et vanille.</p>
+                  <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Bergamote</span><span class="collection-lang-en">Bergamot</span></p>
+                  <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Safran, poivre noir, poire, élémi, rose</span><span class="collection-lang-en">Saffron, black pepper, pear, elemi, rose</span></p>
+                  <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Ambre, musc, bois secs, vanille, santal, patchouli</span><span class="collection-lang-en">Amber, musk, dry woods, vanilla, sandalwood, patchouli</span></p>
                   <p>Mon ressenti : Je l'ai utilisé sur mes vêtements dans une association que j'ai beaucoup aimée.</p>
                   <a href="https://www.pariscornerperfumes.com/products/lueur-d-espoir-arena-intense" target="_blank" rel="noopener noreferrer">Notes officielles de la marque ↗</a>
                 </details>
               </div>
             </article>
-            <article class="perfume-card">
+            <article class="perfume-card" id="fiche-shaghaf-oud">
               <div class="perfume-art perfume-art-oud" role="img" aria-label="Photographie du parfum Shaghaf Oud">
                 <div class="perfume-illustration" aria-hidden="true"><span>Swiss Arabian</span><strong>Shaghaf Oud</strong></div>
               </div>
@@ -444,9 +464,12 @@
                 <span class="note-label">Swiss Arabian</span>
                 <h4>Shaghaf Oud</h4>
                 <p>Un oud profond, enrichi par le safran, la rose et un praliné gourmand.</p>
+                <p class="perfume-family-line"><span class="collection-lang-fr">Oud · gourmand · ambré · floral</span><span class="collection-lang-en">Oud · gourmand · amber · floral</span></p>
                 <details class="perfume-details">
                   <summary>Découvrir les notes et mon avis</summary>
-                  <p>Notes principales : Safran, oud, rose, praliné et vanille.</p>
+                  <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Safran, oud</span><span class="collection-lang-en">Saffron, oud</span></p>
+                  <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Rose, praliné, oud</span><span class="collection-lang-en">Rose, praline, oud</span></p>
+                  <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Oud, vanille</span><span class="collection-lang-en">Oud, vanilla</span></p>
                   <p>Mon ressenti : Un parfum de ma sélection opulente, à explorer seul ou dans un accord gourmand.</p>
                   <a href="https://swissarabian.com/collections/perfume-best-sellers/products/shaghaf-oud-3" target="_blank" rel="noopener noreferrer">Notes officielles de la marque ↗</a>
                 </details>
@@ -489,7 +512,7 @@
         <div class="collection-head">
           <span class="eyebrow"><span class="collection-lang-fr">Mes flacons photographiés</span><span class="collection-lang-en">Photographs from my collection</span></span>
           <h2 id="titre-collection"><span class="collection-lang-fr">Ma collection, par familles olfactives.</span><span class="collection-lang-en">My collection, by fragrance family.</span></h2>
-          <p class="lede"><span class="collection-lang-fr">Explorez mes parfums en photos. Un même parfum peut appartenir à plusieurs familles : découvrez ses accords, ses notes et ses associations possibles.</span><span class="collection-lang-en">Explore my own perfume photographs. One fragrance can belong to several families: discover its accords, notes and pairing ideas.</span></p>
+          <p class="lede"><span class="collection-lang-fr">Explorez neuf parfums classés par familles olfactives, dont mes quatre coups de cœur. Ouvrez leur fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore nine fragrances organized by scent family, including four personal favorites. Open each fragrance page for the notes and my impressions.</span></p>
         </div>
         <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
           <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
@@ -577,6 +600,50 @@
                 <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Vanille, mousse, musc</span><span class="collection-lang-en">Vanilla, moss, musk</span></p>
                 <a href="https://lattafa.com/product/rave-now-women/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
               </details>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand ambre boise floral musque">
+            <div class="collection-photo featured-photo featured-tonka" role="img" aria-label="Flacon Arabians Tonka de ma sélection de quatre parfums"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Montale</span>
+              <h3>Arabians Tonka</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Ambré · gourmand · boisé · floral</span><span class="collection-lang-en">Amber · gourmand · woody · floral</span></span>
+              <p><span class="collection-lang-fr">Bergamote, rose, oud et fève tonka sur un fond ambré.</span><span class="collection-lang-en">Bergamot, rose, oud and tonka bean over an amber base.</span></p>
+              <a class="collection-feature-link" href="#fiche-arabians-tonka"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="ambre boise gourmand musque">
+            <div class="collection-photo featured-photo featured-tobacco" role="img" aria-label="Flacon Intense Red Tobacco de ma sélection de quatre parfums"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Mancera</span>
+              <h3>Intense Red Tobacco</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Tabac · ambré · boisé · vanillé</span><span class="collection-lang-en">Tobacco · amber · woody · vanilla</span></span>
+              <p><span class="collection-lang-fr">Tabac épicé et cuir sur un fond ambré et vanillé.</span><span class="collection-lang-en">Spiced tobacco and leather with amber and vanilla.</span></p>
+              <a class="collection-feature-link" href="#fiche-intense-red-tobacco"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="ambre boise floral musque">
+            <div class="collection-photo featured-photo featured-arena" role="img" aria-label="Flacon Lueur d'Espoir Arena Intense de ma sélection de quatre parfums"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Paris Corner · Emir</span>
+              <h3>Lueur d’Espoir Arena Intense</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Ambré · épicé · boisé · musqué</span><span class="collection-lang-en">Amber · spicy · woody · musky</span></span>
+              <p><span class="collection-lang-fr">Safran, rose, ambre et santal dans un accord épicé.</span><span class="collection-lang-en">Saffron, rose, amber and sandalwood in a spicy blend.</span></p>
+              <a class="collection-feature-link" href="#fiche-arena-intense"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand ambre boise floral">
+            <div class="collection-photo featured-photo featured-oud" role="img" aria-label="Flacon Shaghaf Oud de ma sélection de quatre parfums"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Swiss Arabian</span>
+              <h3>Shaghaf Oud</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Oud · gourmand · ambré · floral</span><span class="collection-lang-en">Oud · gourmand · amber · floral</span></span>
+              <p><span class="collection-lang-fr">Oud, safran, rose et praliné sur une base vanillée.</span><span class="collection-lang-en">Oud, saffron, rose and praline with a vanilla base.</span></p>
+              <a class="collection-feature-link" href="#fiche-shaghaf-oud"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             </div>
           </article>
         </div>
