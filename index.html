@@ -146,6 +146,39 @@
     .perfume-art-tobacco.photo-ready::after{background-position:100% 0%}
     .perfume-art-arena.photo-ready::after{background-position:0% 100%}
     .perfume-art-oud.photo-ready::after{background-position:100% 100%}
+
+    /* Ma collection : petites fiches photographiques, bilingues et filtrables */
+    .collection-section{background:#fffaf5;border-block:1px solid var(--line)}
+    .collection-head{max-width:760px;margin-bottom:30px}
+    .collection-head h2{margin:15px 0}
+    .collection-filters{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0}
+    .collection-filter{border:1px solid #ceb8bc;background:#fff;border-radius:99px;padding:10px 15px;color:var(--wine);cursor:pointer;font-size:.84rem;font-weight:700}
+    .collection-filter[aria-pressed="true"],.collection-filter:hover{background:var(--wine);border-color:var(--wine);color:#fff}
+    .collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .collection-item{display:grid;grid-template-columns:140px minmax(0,1fr);min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
+    .collection-item[hidden]{display:none}
+    .collection-photo{background-image:url("parfum-titia-collection-5.webp");background-repeat:no-repeat;background-size:500% 100%;min-height:245px;background-color:#ead9d3;background-position-y:center;position:relative}
+    .collection-photo.photo-0{background-position-x:0%}
+    .collection-photo.photo-1{background-position-x:25%}
+    .collection-photo.photo-2{background-position-x:50%}
+    .collection-photo.photo-3{background-position-x:75%}
+    .collection-photo.photo-4{background-position-x:100%}
+    .collection-copy{padding:20px 20px 16px;min-width:0}
+    .collection-copy h3{font:400 1.38rem/1.2 Georgia,serif;margin:5px 0 9px}
+    .collection-copy p,.collection-copy details p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:0 0 10px}
+    .collection-tag{display:inline-block;color:var(--wine);font-size:.69rem;letter-spacing:.045em;font-weight:750}
+    .collection-copy details{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}
+    .collection-copy summary{cursor:pointer;color:var(--wine);font-size:.82rem;font-weight:750}
+    .collection-copy details a{display:inline-block;margin-top:4px;font-size:.79rem;color:var(--wine);text-decoration:underline;text-underline-offset:2px}
+    .collection-layering{margin-top:34px;padding:27px;border:1px solid #e1c6cb;background:#f9eeee;border-radius:17px}
+    .collection-layering h3{font:400 1.65rem/1.2 Georgia,serif;margin:8px 0}
+    .collection-layering p,.collection-layering li{font-size:.88rem;color:#625952}
+    .collection-layering li+li{margin-top:8px}
+    .collection-lang-en{display:none}
+    html[lang="en"] .collection-lang-fr{display:none}
+    html[lang="en"] .collection-lang-en{display:inline}
+    @media(max-width:1000px){.collection-grid{grid-template-columns:1fr}}
+    @media(max-width:560px){.collection-item{grid-template-columns:118px minmax(0,1fr)}.collection-photo{min-height:236px}.collection-copy{padding:15px 13px}.collection-copy h3{font-size:1.19rem}.collection-layering{padding:18px}}
     .signature {background:var(--wine-deep);color:#fffaf7;position:relative;overflow:hidden}
     .signature::after {content:"";position:absolute;border:1px solid rgba(255,255,255,.09);width:560px;height:560px;border-radius:50%;right:-180px;top:-170px;box-shadow:0 0 0 100px rgba(255,255,255,.018),0 0 0 220px rgba(255,255,255,.012);pointer-events:none}
     .signature-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:1}
@@ -241,6 +274,7 @@
       <nav class="nav" aria-label="Navigation principale">
         <a href="#univers">Univers</a>
         <a href="#carnet">Le carnet</a>
+        <a href="#ma-collection"><span class="collection-lang-fr">Ma collection</span><span class="collection-lang-en">Collection</span></a>
         <a href="#signature">Mon sillage</a>
         <a href="#histoire">À propos</a>
         <a class="nav-cta" href="#univers">Découvrir <span aria-hidden="true">↗</span></a>
@@ -445,6 +479,116 @@
       </div>
     </section>
 
+
+    <section class="section collection-section" id="ma-collection" aria-labelledby="titre-collection">
+      <div class="container">
+        <div class="collection-head">
+          <span class="eyebrow"><span class="collection-lang-fr">Mes flacons photographiés</span><span class="collection-lang-en">Photographs from my collection</span></span>
+          <h2 id="titre-collection"><span class="collection-lang-fr">Ma collection, par familles olfactives.</span><span class="collection-lang-en">My collection, by fragrance family.</span></h2>
+          <p class="lede"><span class="collection-lang-fr">Explorez mes parfums en photos. Un même parfum peut appartenir à plusieurs familles : découvrez ses accords, ses notes et ses associations possibles.</span><span class="collection-lang-en">Explore my own perfume photographs. One fragrance can belong to several families: discover its accords, notes and pairing ideas.</span></p>
+        </div>
+        <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
+          <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
+          <button type="button" class="collection-filter" data-family="gourmand" aria-pressed="false"><span class="collection-lang-fr">Gourmands & vanillés</span><span class="collection-lang-en">Gourmand & vanilla</span></button>
+          <button type="button" class="collection-filter" data-family="ambre" aria-pressed="false"><span class="collection-lang-fr">Ambrés</span><span class="collection-lang-en">Amber</span></button>
+          <button type="button" class="collection-filter" data-family="boise" aria-pressed="false"><span class="collection-lang-fr">Boisés</span><span class="collection-lang-en">Woody</span></button>
+          <button type="button" class="collection-filter" data-family="floral" aria-pressed="false"><span class="collection-lang-fr">Floraux</span><span class="collection-lang-en">Floral</span></button>
+          <button type="button" class="collection-filter" data-family="musque" aria-pressed="false"><span class="collection-lang-fr">Musqués</span><span class="collection-lang-en">Musky</span></button>
+        </div>
+        <div class="collection-grid">
+          <article class="collection-item" data-families="gourmand musque">
+            <div class="collection-photo photo-0" role="img" aria-label="Flacon Montale Mukhallat photographié dans ma collection"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Montale</span>
+              <h3>Mukhallat</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Fruité · vanillé · musqué</span><span class="collection-lang-en">Fruity · vanilla · musky</span></span>
+              <p><span class="collection-lang-fr">Fraise, amande et vanille, sur un fond balsamique musqué : une gourmandise orientale.</span><span class="collection-lang-en">Strawberry, almond and vanilla over a musky balsamic base: an oriental gourmand.</span></p>
+              <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Fraise, amande</span><span class="collection-lang-en">Strawberry, almond</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Vanille</span><span class="collection-lang-en">Vanilla</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Baume, musc</span><span class="collection-lang-en">Balsam, musk</span></p>
+                <a href="https://www.montaleparfums.com/fr/gourmand/56-mukhalat.html" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
+              </details>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand floral musque">
+            <div class="collection-photo photo-1" role="img" aria-label="Flacon Paris Corner Marshmallow Blush photographié dans ma collection"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Paris Corner</span>
+              <h3>Marshmallow Blush</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Guimauve · vanille · fruité</span><span class="collection-lang-en">Marshmallow · vanilla · fruity</span></span>
+              <p><span class="collection-lang-fr">Une douceur de fruits rouges, crème fouettée et guimauve, relevée par la fleur d’oranger.</span><span class="collection-lang-en">Red berries, whipped cream and marshmallow sweetness lifted by orange blossom.</span></p>
+              <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Fraise, framboise, citron</span><span class="collection-lang-en">Strawberry, raspberry, lemon</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Ambroxan, fleur d’oranger, crème fouettée</span><span class="collection-lang-en">Ambroxan, orange blossom, whipped cream</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Musc, guimauve, vanille</span><span class="collection-lang-en">Musk, marshmallow, vanilla</span></p>
+                <a href="https://www.pariscornerperfumes.com/products/marshmallow-blush" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
+              </details>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand ambre boise">
+            <div class="collection-photo photo-2" role="img" aria-label="Flacon Lattafa Yara Candy photographié dans ma collection"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Lattafa</span>
+              <h3>Yara Candy</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Fruité sucré · vanillé · ambré</span><span class="collection-lang-en">Candied fruit · vanilla · amber</span></span>
+              <p><span class="collection-lang-fr">Des fruits acidulés, une fraise façon bonbon et un sirop vanillé sur un fond ambré.</span><span class="collection-lang-en">Tangy fruits and fizzy strawberry candy over vanilla syrup and an amber base.</span></p>
+              <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Mandarine verte, cassis</span><span class="collection-lang-en">Green mandarin, blackcurrant</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Bonbon pétillant à la fraise, gardénia</span><span class="collection-lang-en">Strawberry fizz candy, gardenia</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Santal, sirop de vanille, musc, ambre</span><span class="collection-lang-en">Sandalwood, vanilla syrup, musk, amber</span></p>
+                <a href="https://lattafa.com/product/yara-candy/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
+              </details>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand ambre boise floral musque">
+            <div class="collection-photo photo-3" role="img" aria-label="Flacon Lattafa Yara photographié dans ma collection"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Lattafa</span>
+              <h3>Yara</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Vanillé · floral · boisé</span><span class="collection-lang-en">Vanilla · floral · woody</span></span>
+              <p><span class="collection-lang-fr">Une vanille douce et crémeuse, des fleurs poudrées et une touche tropicale.</span><span class="collection-lang-en">Soft creamy vanilla, powdery flowers and a tropical touch.</span></p>
+              <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Mandarine, héliotrope, orchidée</span><span class="collection-lang-en">Tangerine, heliotrope, orchid</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Notes tropicales, accord gourmand</span><span class="collection-lang-en">Tropical notes, gourmand accord</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Vanille, santal, musc</span><span class="collection-lang-en">Vanilla, sandalwood, musk</span></p>
+                <a href="https://lattafa.com/product/yara/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
+              </details>
+            </div>
+          </article>
+
+          <article class="collection-item" data-families="gourmand floral musque">
+            <div class="collection-photo photo-4" role="img" aria-label="Flacon Rave · Lattafa Now Women photographié dans ma collection"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Rave · Lattafa</span>
+              <h3>Now Women</h3>
+              <span class="collection-tag"><span class="collection-lang-fr">Fruits rouges · guimauve · musqué</span><span class="collection-lang-en">Red fruits · marshmallow · musk</span></span>
+              <p><span class="collection-lang-fr">Fruits rouges et orange, cœur floral à la guimauve, fond vanillé et musqué.</span><span class="collection-lang-en">Red fruits and orange, a floral marshmallow heart and a vanilla-musk base.</span></p>
+              <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Fruits rouges, orange</span><span class="collection-lang-en">Red fruits, orange</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Guimauve, muguet, jasmin</span><span class="collection-lang-en">Marshmallow, lily of the valley, jasmine</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Vanille, mousse, musc</span><span class="collection-lang-en">Vanilla, moss, musk</span></p>
+                <a href="https://lattafa.com/product/rave-now-women/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Consulter les notes de la marque ↗</span><span class="collection-lang-en">See the brand's fragrance notes ↗</span></a>
+              </details>
+            </div>
+          </article>
+        </div>
+        <aside class="collection-layering">
+          <span class="collection-tag"><span class="collection-lang-fr">Associations à explorer · non encore testées</span><span class="collection-lang-en">Layering ideas · not yet tested</span></span>
+          <h3><span class="collection-lang-fr">Quelques accords gourmands à imaginer.</span><span class="collection-lang-en">A few gourmand pairings to explore.</span></h3>
+          <ul>
+            <li><strong>Mukhallat + Marshmallow Blush :</strong> <span class="collection-lang-fr">fraise, amande, vanille et guimauve pour une gourmandise très sucrée</span><span class="collection-lang-en">strawberry, almond, vanilla and marshmallow for an extra-sweet blend</span></li>
+            <li><strong>Yara Candy + Now Women :</strong> <span class="collection-lang-fr">fruits rouges, fraise bonbon et guimauve sur fond vanillé</span><span class="collection-lang-en">red berries, candied strawberry and marshmallow over vanilla</span></li>
+            <li><strong>Yara + Mukhallat :</strong> <span class="collection-lang-fr">vanille tropicale, amande, fraise et musc</span><span class="collection-lang-en">tropical vanilla, almond, strawberry and musk</span></li>
+          </ul>
+          <p><span class="collection-lang-fr">Suggestions à tester en petite quantité, sur des zones distinctes. Ces accords ne sont pas présentés comme des essais personnels.</span><span class="collection-lang-en">Try lightly on separate areas. These are suggestions, not claimed personal trials.</span></p>
+        </aside>
+      </div>
+    </section>
+
     <section class="section signature" id="signature" aria-labelledby="titre-signature">
       <div class="container signature-grid">
         <div>
@@ -511,6 +655,20 @@
         });
       });
       personalCollage.src = 'mes-quatre-parfums.webp';
+
+      // Collection personnelle : filtres par familles, sans changer la langue courante.
+      document.querySelectorAll('.collection-filter').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var family=button.getAttribute('data-family');
+          document.querySelectorAll('.collection-filter').forEach(function (item) {
+            item.setAttribute('aria-pressed',String(item===button));
+          });
+          document.querySelectorAll('.collection-item').forEach(function (item) {
+            var families=(item.getAttribute('data-families')||'').split(' ');
+            item.hidden=family!=='tous'&&families.indexOf(family)===-1;
+          });
+        });
+      });
       var buttons = document.querySelectorAll('.filter');
       var notes = document.querySelectorAll('.note');
       buttons.forEach(function (button) {
