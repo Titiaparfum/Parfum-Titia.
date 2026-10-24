@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f8f3ec">
+<title>Suivi local des abonnés | Parfum-Titia</title>
+<style>
+:root{--ink:#29231f;--muted:#6f655d;--wine:#743a4e;--paper:#fffcf8;--bg:#f8f3ec;--line:#e4d8d1}
+*{box-sizing:border-box}body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;margin:0;background:var(--bg);color:var(--ink)}main{width:min(1030px,calc(100% - 32px));margin:0 auto;padding:32px 0 80px}
+header{background:#fff9f3;border-bottom:1px solid var(--line)}header .inner{width:min(1030px,calc(100% - 32px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 0}
+a{color:var(--wine)}.brand{color:var(--wine);text-decoration:none;font:1.5rem Georgia,serif}
+h1,h2,h3{font-family:Georgia,serif;font-weight:400}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;margin:14px 0}
+h2{font-size:1.85rem;margin:0 0 12px}h3{font-size:1.32rem;margin:7px 0}
+.lead{color:var(--muted);max-width:760px}.eyebrow{font-size:.72rem;color:var(--wine);font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:22px;margin:20px 0}
+.note{border-left:4px solid #ae805a;background:#fff2e5;padding:14px 17px;margin:20px 0;font-size:.9rem}
+.field-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:18px 0}
+.field{display:flex;flex-direction:column;gap:5px;font-size:.86rem;font-weight:700}
+input[type=file],select{display:block;max-width:100%;width:100%;background:#fff;border:1px solid #cbbcb5;padding:11px;border-radius:10px;font-size:.9rem;color:var(--ink)}
+label.check{display:flex;align-items:flex-start;gap:10px;font-size:.87rem;max-width:850px}
+label.check input{margin-top:5px;min-width:18px;min-height:18px}
+.action{border:1px solid var(--wine);background:var(--wine);color:#fff;border-radius:50px;padding:10px 18px;font-weight:750;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.action.secondary{color:var(--wine);background:transparent}
+.action:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:23px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px}
+.stat b{font:2.15rem Georgia,serif;color:var(--wine);display:block;line-height:1.2}
+.stat span{color:var(--muted);font-size:.8rem}
+.bell{display:flex;align-items:flex-start;gap:14px;background:#f6e8d4;border:1px solid #d8b78c;border-radius:15px;padding:18px;margin:20px 0}
+.bell .symbol{font-size:2rem;line-height:1}
+.bell p{margin:6px 0;color:#6b5547}
+.kpis{display:flex;gap:10px;flex-wrap:wrap}
+.pill{border:1px solid #c8b2a5;padding:7px 12px;border-radius:30px;background:#fff;font-size:.85rem}
+.pill.achieved{border-color:#c59b7e;background:#f9ece5}
+.tablewrap{overflow:auto;max-width:100%;border:1px solid var(--line);border-radius:13px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3e9e3;white-space:nowrap}
+td small{display:block;color:var(--muted)}
+.status{color:var(--muted);font-size:.9rem}
+.good{color:#26724b}.bad{color:#9a553a}
+.hidden{display:none!important}code{overflow-wrap:anywhere}
+@media(max-width:750px){.field-grid,.stats{grid-template-columns:1fr}.panel{padding:17px}}
+</style></head>
+<body><header><div class="inner"><a class="brand" href="./index.html">Parfum-Titia</a><a href="./communaute.html">← Communauté</a></div></header>
+<main><span class="eyebrow">Outil local · aucun stockage public des e-mails</span>
+<h1>Suivi des abonnés et cloche des paliers</h1>
+<p class="lead">Importez un export CSV de votre liste d'abonnés. Ce tableau analyse le fichier <strong>uniquement dans votre navigateur</strong>. Aucune adresse, aucun pseudo ni aucun fichier n'est envoyé à GitHub ou à Parfum-Titia. Utilisez de préférence votre iPhone ou ordinateur personnel.</p>
+<div class="note"><strong>Important :</strong> cet outil est une analyse locale, et non un service d'inscription ni une notification automatique lorsque la page est fermée. Pour compter de véritables abonnés, il faut d'abord connecter un formulaire privé à une liste d'e-mails confirmés (par exemple Brevo). L'export de contacts peut identifier les abonnés confirmés, mais <strong>le 10 000ᵉ confirmé exige l'ordre exact des confirmations</strong>.</div>
+<section class="panel" aria-labelledby="import-title"><h2 id="import-title">1. Importer et contrôler les inscriptions</h2>
+<label class="field">Choisir un export CSV (Brevo ou registre préparé)
+<input id="csvfile" type="file" accept=".csv,text/csv,text/plain"></label>
+<p id="fileinfo" class="status" aria-live="polite">Aucun fichier ouvert.</p>
+<div id="mapping" class="hidden">
+<p>Associez les colonnes de votre fichier. La colonne de confirmation est indispensable pour compter les abonnés validés.</p>
+<div class="field-grid">
+<label class="field">E-mail <select id="col-email"></select></label>
+<label class="field">Confirmation e-mail (ex. DOUBLE_OPT-IN) <select id="col-confirm"></select></label>
+<label class="field">Date <strong>réelle</strong> de confirmation <select id="col-date"></select></label>
+<label class="field">Pseudo de contribution (facultatif) <select id="col-username"></select></label>
+<label class="field">Participation vérifiée (oui/non) <select id="col-activity"></select></label>
+<label class="field">« J'aime » vérifié (oui/non) <select id="col-like"></select></label>
+</div>
+<label class="check"><input type="checkbox" id="date-certified"><span>Je confirme que la date sélectionnée est bien l'horodatage de <strong>confirmation de l'inscription</strong>, et non la date de création du contact. Les confirmations ont été archivées sans interruption.</span></label>
+<div class="actions"><button id="analyze" class="action" type="button">Analyser mes abonnés</button><button id="reset" class="action secondary" type="button">Effacer les données importées</button></div></div>
+</section>
+<section id="results" class="hidden" aria-live="polite">
+<div class="stats">
+<div class="stat"><b id="n-confirmed">0</b><span>Abonnés avec confirmation explicite</span></div>
+<div class="stat"><b id="n-active">—</b><span>Participation vérifiée</span></div>
+<div class="stat"><b id="n-next">500</b><span>Prochain palier de 500</span></div>
+</div>
+<div id="bell" class="bell" role="status"><div class="symbol" aria-hidden="true">🔔</div><div><strong id="bell-title">Cloche des paliers</strong><p id="bell-msg">Aucun palier franchi depuis le dernier contrôle enregistré sur cet appareil.</p><button id="ding" class="action secondary" type="button">Faire sonner la cloche</button></div></div>
+<div class="panel"><h2>2. Paliers de la communauté</h2><p class="status">Les paliers reflètent les inscriptions e-mail confirmées uniques, et non les visiteurs ni les « J'aime ».</p><div class="kpis" id="milestones"></div>
+<p class="status" id="ranking-status"></p></div>
+<div class="panel"><h2>3. Le membre de chaque palier cadeau</h2>
+<p class="status">10 000, 20 000, 30 000, 40 000 et 50 000 : seul le membre confirmé au rang précis est examiné. Il doit ensuite être reconnu comme participant actif et avoir mis un « J'aime ». Les volumes (6, 10, 20, 30, 100 ml) et modalités exactes feront l'objet d'un règlement avant l'ouverture de l'opération.</p>
+<div class="tablewrap"><table><thead><tr><th>Rang</th><th>Membre</th><th>Participation</th><th>« J'aime »</th><th>Admissibilité</th></tr></thead><tbody id="winners"></tbody></table></div>
+<p class="status">Les coordonnées sont visibles seulement après votre import, sur cet appareil. La vérification des commentaires et des réactions GitHub reste manuelle tant qu'aucune liaison nominative sécurisée n'est activée. Demandez l'adresse postale uniquement après désignation définitive et par un canal privé.</p>
+</div></section>
+<section class="panel"><h2>Mettre en place l'inscription réelle</h2>
+<p>Le site GitHub Pages ne fournit pas de base de contacts privée. Pour obtenir un compteur authentique, créez une liste privée et un <strong>formulaire à double confirmation</strong>. Vous pourrez exporter les contacts confirmés et charger ici le CSV. Pour identifier un rang exact, conservez aussi l'historique horodaté de confirmation. Les simples dates de création ne suffisent pas.</p>
+<p><a href="https://help.brevo.com/hc/fr/articles/208771869-Cr%C3%A9er-un-formulaire-d-inscription-dans-Brevo" target="_blank" rel="noopener noreferrer">Aide Brevo : créer un formulaire avec double confirmation ↗</a></p>
+<p><a href="https://help.brevo.com/hc/fr/articles/5310065850642-Exporter-vos-contacts-%C3%A0-partir-de-Brevo" target="_blank" rel="noopener noreferrer">Aide Brevo : exporter les contacts CSV ↗</a></p>
+<p class="status">Pour respecter la vie privée, ce tableau ne mémorise sur votre appareil que <strong>le dernier total numérique</strong> analysé, jamais les e-mails. Les données importées disparaissent lorsque la page est rechargée.</p>
+</section></main>
+<script>(function(){"use strict";
+var $=function(id){return document.getElementById(id)};
+var csvRows=[],headers=[],confirmedRecords=[],lastCount=null;var storageKey="parfumtitia-last-confirmed-count-v1";
+try{var previous=localStorage.getItem(storageKey);if(previous!==null&&/^\d+$/.test(previous))lastCount=Number(previous)}catch(e){}
+function num(n){return new Intl.NumberFormat("fr-FR").format(n)}
+function csvParse(data,delimiter){var rows=[],row=[],field="",quoted=false;for(var i=0;i<data.length;i++){var c=data[i];if(c==='"'){if(quoted&&data[i+1]==='"'){field+='"';i++}else{quoted=!quoted}}else if(c===delimiter&&!quoted){row.push(field);field=""}else if((c==="\n"||c==="\r")&&!quoted){if(c==="\r"&&data[i+1]==="\n")i++;row.push(field);if(row.some(function(v){return v.trim()!==""}))rows.push(row);row=[];field=""}else{field+=c}}row.push(field);if(row.some(function(v){return v.trim()!==""}))rows.push(row);return rows}
+function detectDelimiter(data){var text=data.slice(0,5000),k=["; ",",","\t",";"];var m=[",",";","\t"],best=",",highest=-1;for(var i=0;i<m.length;i++){var row=csvParse(text,m[i])[0]||[];if(row.length>highest){highest=row.length;best=m[i]}}return best}
+function normalize(v){return String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"")}
+function columnGuess(type){var patterns={email:["email","emailaddress","courriel","e mail","adresseemail"],confirm:["doubleoptin","doubleoptinconfirmed","confirme","confirmation","isconfirmed","statutconfirmation"],date:["confirmedat","confirmationdate","dateconfirmation","doubleoptindate","confirmationtimestamp","date"],username:["github","pseudogithub","username","pseudo"],activity:["participation","active","participationverifiee","contribution"],like:["jaime","liked","like","reactions"]};var items=patterns[type]||[];var normalized=headers.map(normalize);for(var j=0;j<items.length;j++){var idx=normalized.indexOf(normalize(items[j]));if(idx>=0)return String(idx)}for(j=0;j<items.length;j++){var exact=normalize(items[j]);var find=normalized.findIndex(function(z){return z.indexOf(exact)>=0});if(find>=0)return String(find)}return ""}
+function addOptions(id,guess){var sel=$(id);sel.textContent="";var blank=document.createElement("option");blank.value="";blank.textContent="— Non disponible —";sel.appendChild(blank);headers.forEach(function(t,i){var o=document.createElement("option");o.value=String(i);o.textContent=(i+1)+". "+(t||"(sans titre)");sel.appendChild(o)});sel.value=columnGuess(guess)}
+function cell(row,which){var sel=$(which).value;if(sel==="")return "";return String(row[Number(sel)]||"").trim()}
+function answer(v){var x=normalize(v);if(["oui","yes","y","true","1","confirmed","confirme","verifie","active","actif","liked","like","subscribed"].indexOf(x)>=0)return "yes";if(["non","no","n","false","0","unconfirmed","pending","unsubscribed","inactive"].indexOf(x)>=0)return "no";return "unknown"}
+function parseDate(text){var s=String(text||"").trim();if(!s)return NaN;var d=Date.parse(s);if(!isNaN(d))return d;var m=s.match(/^(\d{2})[\/.-](\d{2})[\/.-](\d{4})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);if(m){var a=Date.parse(m[3]+"-"+m[2]+"-"+m[1]+"T"+(m[4]||"00")+":"+(m[5]||"00")+":"+(m[6]||"00"));if(!isNaN(a))return a}return NaN}
+function el(name,txt,cls){var e=document.createElement(name);if(txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e}
+function setChildren(id,children){var host=$(id);host.textContent="";children.forEach(function(e){host.appendChild(e)})}
+function checkRank(records){return !!$("date-certified").checked && $("col-date").value!=="" && records.length>0&&records.every(function(v){return Number.isFinite(v.timestamp)})&&records.every(function(v,i){return i===0||records[i-1].timestamp<v.timestamp})}
+function analyze(){
+var ei=$("col-email").value,ci=$("col-confirm").value;if(ei===""||ci===""){alert("Veuillez choisir les colonnes E-mail et Confirmation explicite.");return}
+var map=new Map();var ignored=0;
+for(var i=0;i<csvRows.length;i++){var row=csvRows[i],email=cell(row,"col-email").toLowerCase().trim(),conf=answer(cell(row,"col-confirm"));if(conf!=="yes"||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ignored++;continue}
+var date=cell(row,"col-date"),timestamp=parseDate(date);
+var record={email:email,time:date,timestamp:timestamp,username:cell(row,"col-username"),active:answer(cell(row,"col-activity")),liked:answer(cell(row,"col-like"))};
+if(map.has(email)){var old=map.get(email);if(Number.isFinite(timestamp)&&(!Number.isFinite(old.timestamp)||timestamp<old.timestamp))map.set(email,record)}else{map.set(email,record)}
+}
+confirmedRecords=Array.from(map.values());var count=confirmedRecords.length;
+$("n-confirmed").textContent=num(count);
+$("n-active").textContent=$("col-activity").value===""?"À vérifier":num(confirmedRecords.filter(function(r){return r.active==="yes"}).length);
+$("n-next").textContent=num((Math.floor(count/500)+1)*500);
+$("results").classList.remove("hidden");
+var ordered=$("date-certified").checked&&$("col-date").value!==""&&confirmedRecords.every(function(r){return Number.isFinite(r.timestamp)});
+if(ordered)confirmedRecords.sort(function(a,b){return a.timestamp-b.timestamp});
+var unique=ordered&&confirmedRecords.every(function(r,i){return i===0||r.timestamp!==confirmedRecords[i-1].timestamp});
+var ranked=ordered&&unique;
+$("ranking-status").textContent=ranked?"Le classement repose sur la date de confirmation certifiée et ne présente aucune égalité d'horodatage. Vérifier l'exhaustivité des confirmations avant d'attribuer un cadeau.":"Rang exact NON VÉRIFIÉ : choisir les horodatages réels de confirmation, cocher la certification et utiliser un historique complet sans ex æquo. La date de création Brevo ne suffit pas.";
+var steps=[10000,20000,30000,40000,50000],tbody=$("winners");tbody.textContent="";
+steps.forEach(function(step){var tr=el("tr"),record=count>=step&&ranked?confirmedRecords[step-1]:null;
+tr.appendChild(el("td",num(step)+"ᵉ"));
+if(record){var member=el("td");member.appendChild(el("strong",record.username||"Pseudo non renseigné"));member.appendChild(el("small",record.email));tr.appendChild(member);
+tr.appendChild(el("td",record.active==="yes"?"Oui":record.active==="no"?"Non":"Non vérifié"));
+tr.appendChild(el("td",record.liked==="yes"?"Oui":record.liked==="no"?"Non":"Non vérifié"));
+var eligible=record.active==="yes"&&record.liked==="yes";
+tr.appendChild(el("td",eligible?"Critères déclarés remplis ; contrôle manuel obligatoire":record.active==="no"||record.liked==="no"?"Critères non remplis":"Vérification manuelle nécessaire",eligible?"good":"bad"));
+}else{tr.appendChild(el("td",count<step?"Palier non atteint":"Classement non certifié"));tr.appendChild(el("td","—"));tr.appendChild(el("td","—"));tr.appendChild(el("td","Aucun gagnant validé"))}
+tbody.appendChild(tr)});
+var milestones=$("milestones");milestones.textContent="";for(var m=500;m<=Math.max(500,Math.min(50000,(Math.floor(count/500)+1)*500));m+=500){var span=el("span",num(m), "pill"+(count>=m?" achieved":""));milestones.appendChild(span)}
+var previous=lastCount;var past=Math.floor((previous===null?0:previous)/500)*500,now=Math.floor(count/500)*500;
+if(now>past){$("bell-title").textContent="🔔 Palier"+(now>500?"s":"")+" franchi"+(now>500?"s":"")+" !";var crossed=[];for(var n=past+500;n<=now;n+=500)crossed.push(num(n));$("bell-msg").textContent="Seuil"+(crossed.length>1?"s":"")+" atteint"+(crossed.length>1?"s":"")+" : "+crossed.join(", ")+". Cloche locale : les alertes ne fonctionnent pas lorsque la page est fermée.";$("bell").style.background="#f4e2ca";}else{$("bell-title").textContent="Cloche des paliers";$("bell-msg").textContent="Pas de nouveau palier de 500 franchi depuis le précédent contrôle enregistré sur cet appareil."}
+lastCount=count;try{localStorage.setItem(storageKey,String(count))}catch(e){}
+if(count===0){$("ranking-status").textContent="Aucun abonné confirmé valide trouvé dans ce fichier ; vérifiez le statut de double confirmation."}
+}
+$("csvfile").addEventListener("change",function(ev){var file=ev.target.files&&ev.target.files[0];if(!file)return;
+if(file.size>20*1024*1024){$("fileinfo").textContent="Fichier trop volumineux (maximum 20 Mo).";return}
+var reader=new FileReader();reader.onload=function(){var text=String(reader.result||"").replace(/^\uFEFF/,"");var delimiter=detectDelimiter(text);var parsed=csvParse(text,delimiter);
+if(parsed.length<2){$("fileinfo").textContent="Le fichier ne contient pas de lignes à analyser.";return}
+headers=parsed.shift().map(function(s){return s.trim()});csvRows=parsed;
+[["col-email","email"],["col-confirm","confirm"],["col-date","date"],["col-username","username"],["col-activity","activity"],["col-like","like"]].forEach(function(pair){addOptions(pair[0],pair[1])});
+$("date-certified").checked=false;$("mapping").classList.remove("hidden");$("results").classList.add("hidden");
+$("fileinfo").textContent="Fichier chargé localement : "+num(csvRows.length)+" lignes, "+num(headers.length)+" colonnes. Aucune donnée n'a quitté cet appareil.";
+};reader.onerror=function(){$("fileinfo").textContent="Impossible de lire le fichier."};reader.readAsText(file,"UTF-8")});
+$("analyze").addEventListener("click",analyze);
+$("reset").addEventListener("click",function(){csvRows=[];headers=[];confirmedRecords=[];$("csvfile").value="";$("fileinfo").textContent="Données privées effacées de la page.";$("mapping").classList.add("hidden");$("results").classList.add("hidden")});
+$("ding").addEventListener("click",function(){try{var C=window.AudioContext||window.webkitAudioContext;if(!C)return;var c=new C(),o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.setValueAtTime(880,c.currentTime);o.frequency.exponentialRampToValueAtTime(1175,c.currentTime+0.11);g.gain.setValueAtTime(0.0001,c.currentTime);g.gain.exponentialRampToValueAtTime(0.15,c.currentTime+0.015);g.gain.exponentialRampToValueAtTime(0.0001,c.currentTime+0.4);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+0.42);o.onended=function(){c.close()}}catch(e){}});
+})();</script></body></html>
