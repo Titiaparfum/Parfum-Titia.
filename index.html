@@ -189,6 +189,13 @@
     .collection-layering h3{font:400 1.65rem/1.2 Georgia,serif;margin:8px 0}
     .collection-layering p,.collection-layering li{font-size:.88rem;color:#625952}
     .collection-layering li+li{margin-top:8px}
+    .rare-accords{margin-top:26px;padding-top:21px;border-top:1px solid #e1c6cb}
+    .rare-accords-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+    .rare-accord{background:var(--paper);border:1px solid #e1c6cb;border-radius:13px;padding:17px;min-width:0}
+    .rare-accord h4{font:400 1.32rem/1.2 Georgia,serif;margin:8px 0}
+    .rare-accord p{font-size:.83rem;line-height:1.65;margin:0 0 12px}
+    .rare-accord .rare-method{border-top:1px solid var(--line);padding-top:10px;margin-bottom:0}
+    @media(max-width:900px){.rare-accords-grid{grid-template-columns:1fr}}
     .collection-lang-en{display:none}
     html[lang="en"] .collection-lang-fr{display:none}
     html[lang="en"] .collection-lang-en{display:inline}
@@ -575,6 +582,7 @@
           <h2 id="titre-collection"><span class="collection-lang-fr">Ma collection, par familles olfactives.</span><span class="collection-lang-en">My collection, by fragrance family.</span></h2>
           <p class="lede"><span class="collection-lang-fr">Explorez mes neuf parfums selon leur famille olfactive principale : chaque flacon apparaît dans une seule rubrique, même s’il possède plusieurs accords secondaires. Cliquez sur une famille, puis ouvrez sa fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore my nine fragrances by their main scent family: each bottle appears in just one category, even if it has secondary accords. Choose a family, then open the fragrance details.</span></p>
         </div>
+        <p><a class="collection-feature-link" href="#accords-rares"><span class="collection-lang-fr">Découvrir mes associations et effluves rares ↓</span><span class="collection-lang-en">Discover creative fragrance pairings ↓</span></a></p>
         <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
           <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
           <button type="button" class="collection-filter" data-family="gourmand" aria-pressed="false"><span class="collection-lang-fr">Gourmands & vanillés</span><span class="collection-lang-en">Gourmand & vanilla</span></button>
@@ -721,7 +729,7 @@
           </article>
         </div>
         <p class="collection-empty" id="collection-empty" hidden><span class="collection-lang-fr">Aucun parfum de ma collection n’est encore classé dans cette famille. La rubrique attend mes prochains flacons.</span><span class="collection-lang-en">No fragrance in my collection belongs to this main family yet. This category is ready for future additions.</span></p>
-        <aside class="collection-layering">
+        <aside class="collection-layering" id="accords-rares">
           <span class="collection-tag"><span class="collection-lang-fr">Associations à explorer · non encore testées</span><span class="collection-lang-en">Layering ideas · not yet tested</span></span>
           <h3><span class="collection-lang-fr">Quelques accords gourmands à imaginer.</span><span class="collection-lang-en">A few gourmand pairings to explore.</span></h3>
           <ul>
@@ -729,7 +737,35 @@
             <li><strong>Yara Candy + Now Women :</strong> <span class="collection-lang-fr">fruits rouges, fraise bonbon et guimauve sur fond vanillé</span><span class="collection-lang-en">red berries, candied strawberry and marshmallow over vanilla</span></li>
             <li><strong>Yara + Mukhallat :</strong> <span class="collection-lang-fr">vanille tropicale, amande, fraise et musc</span><span class="collection-lang-en">tropical vanilla, almond, strawberry and musk</span></li>
           </ul>
-          <p><span class="collection-lang-fr">Suggestions à tester en petite quantité, sur des zones distinctes. Ces accords ne sont pas présentés comme des essais personnels.</span><span class="collection-lang-en">Try lightly on separate areas. These are suggestions, not claimed personal trials.</span></p>
+          <div class="rare-accords">
+            <span class="collection-tag"><span class="collection-lang-fr">Effluves rares · carnet de créations</span><span class="collection-lang-en">Rare scent trails · creative journal</span></span>
+            <h3><span class="collection-lang-fr">Trois signatures inattendues à imaginer.</span><span class="collection-lang-en">Three unexpected signatures to explore.</span></h3>
+            <p><span class="collection-lang-fr">Des accords créatifs à tester, sans promesse d'exclusivité ni de projection exceptionnelle. Chaque proposition associe des facettes contrastées.</span><span class="collection-lang-en">Creative combinations to try, without claiming exclusivity or extraordinary projection. Each idea plays with contrasting facets.</span></p>
+            <div class="rare-accords-grid">
+              <article class="rare-accord">
+                <span class="collection-tag"><span class="collection-lang-fr">Idée · non testée</span><span class="collection-lang-en">Idea · untested</span></span>
+                <h4><span class="collection-lang-fr">Velours tropical</span><span class="collection-lang-en">Tropical Velvet</span></h4>
+                <p><strong>Yara + Shaghaf Oud</strong></p>
+                <p><span class="collection-lang-fr">La vanille crémeuse et les fleurs poudrées de Yara rencontrent le oud, la rose et le praliné de Shaghaf Oud. Une piste florale-boisée, douce et profonde.</span><span class="collection-lang-en">Yara's creamy vanilla and powdery flowers meet Shaghaf Oud's oud, rose and praline. A soft yet deep floral-woody idea.</span></p>
+                <p class="rare-method"><span class="collection-lang-fr"><strong>Pour essayer :</strong> une pulvérisation de chaque parfum sur deux zones différentes, puis observer leur évolution.</span><span class="collection-lang-en"><strong>To try:</strong> one spray of each on separate areas, then follow how they develop.</span></p>
+              </article>
+              <article class="rare-accord">
+                <span class="collection-tag"><span class="collection-lang-fr">Idée · non testée</span><span class="collection-lang-en">Idea · untested</span></span>
+                <h4><span class="collection-lang-fr">Safran guimauve</span><span class="collection-lang-en">Saffron Marshmallow</span></h4>
+                <p><strong>Marshmallow Blush + Lueur d’Espoir Arena Intense</strong></p>
+                <p><span class="collection-lang-fr">La guimauve et les fruits rouges apporteraient un contraste gourmand au safran, à l'ambre et au santal d'Arena Intense : une idée sucrée-épicée moins évidente.</span><span class="collection-lang-en">Marshmallow and red berries could bring a sweet contrast to Arena Intense's saffron, amber and sandalwood: an unusual sweet-spicy pairing.</span></p>
+                <p class="rare-method"><span class="collection-lang-fr"><strong>Pour essayer :</strong> commencer par une pulvérisation de chaque, sans les superposer au même endroit.</span><span class="collection-lang-en"><strong>To try:</strong> start with one spray of each on different areas, without layering on the same spot.</span></p>
+              </article>
+              <article class="rare-accord">
+                <span class="collection-tag"><span class="collection-lang-fr">Idée · non testée</span><span class="collection-lang-en">Idea · untested</span></span>
+                <h4><span class="collection-lang-fr">Fruits de minuit</span><span class="collection-lang-en">Midnight Fruits</span></h4>
+                <p><strong>Now Women + Intense Red Tobacco</strong></p>
+                <p><span class="collection-lang-fr">Les fruits rouges et la guimauve de Now Women pourraient adoucir le tabac épicé, le cuir et les bois d'Intense Red Tobacco. Une rencontre fruitée et fumée à explorer.</span><span class="collection-lang-en">Now Women's red fruits and marshmallow could soften Intense Red Tobacco's spiced tobacco, leather and woods. An intriguing fruity-smoky contrast.</span></p>
+                <p class="rare-method"><span class="collection-lang-fr"><strong>Pour essayer :</strong> appliquer très légèrement et comparer chaque parfum seul avant de juger l'accord.</span><span class="collection-lang-en"><strong>To try:</strong> apply lightly and compare with each perfume worn alone before judging the pairing.</span></p>
+              </article>
+            </div>
+          </div>
+          <p><span class="collection-lang-fr">Suggestions à tester en petite quantité, sur des zones distinctes. Ces accords ne sont pas présentés comme des essais personnels. Éviter de pulvériser sur une peau irritée ou sur des textiles délicats.</span><span class="collection-lang-en">Try lightly on separate areas. These suggestions are not presented as personal trials. Avoid spraying irritated skin or delicate fabrics.</span></p>
         </aside>
       </div>
     </section>
