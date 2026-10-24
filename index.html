@@ -157,6 +157,10 @@
     .collection-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
     .collection-item{display:grid;grid-template-columns:140px minmax(0,1fr);min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
     .collection-item[hidden]{display:none}
+    .collection-status{color:var(--muted);font-size:.86rem;margin:0 0 16px}
+    .collection-primary{color:var(--wine)!important;font-size:.76rem!important;font-weight:800;letter-spacing:.01em;margin:1px 0 8px!important}
+    .collection-empty{background:var(--paper);border:1px dashed #c5a4ab;border-radius:16px;padding:22px;font-size:.94rem;color:var(--muted)}
+    .collection-empty[hidden]{display:none}
     .collection-photo{background-image:url("parfum-titia-collection-5.webp");background-repeat:no-repeat;background-size:500% 100%;min-height:245px;background-color:#ead9d3;background-position-y:center;position:relative}
     .collection-photo.photo-0{background-position-x:0%}
     .collection-photo.photo-1{background-position-x:25%}
@@ -569,22 +573,26 @@
         <div class="collection-head">
           <span class="eyebrow"><span class="collection-lang-fr">Mes flacons photographiés</span><span class="collection-lang-en">Photographs from my collection</span></span>
           <h2 id="titre-collection"><span class="collection-lang-fr">Ma collection, par familles olfactives.</span><span class="collection-lang-en">My collection, by fragrance family.</span></h2>
-          <p class="lede"><span class="collection-lang-fr">Explorez neuf parfums classés par familles olfactives, dont mes quatre coups de cœur. Ouvrez leur fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore nine fragrances organized by scent family, including four personal favorites. Open each fragrance page for the notes and my impressions.</span></p>
+          <p class="lede"><span class="collection-lang-fr">Explorez mes neuf parfums selon leur famille olfactive principale : chaque flacon apparaît dans une seule rubrique, même s’il possède plusieurs accords secondaires. Cliquez sur une famille, puis ouvrez sa fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore my nine fragrances by their main scent family: each bottle appears in just one category, even if it has secondary accords. Choose a family, then open the fragrance details.</span></p>
         </div>
         <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
           <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
           <button type="button" class="collection-filter" data-family="gourmand" aria-pressed="false"><span class="collection-lang-fr">Gourmands & vanillés</span><span class="collection-lang-en">Gourmand & vanilla</span></button>
-          <button type="button" class="collection-filter" data-family="ambre" aria-pressed="false"><span class="collection-lang-fr">Ambrés</span><span class="collection-lang-en">Amber</span></button>
+          <button type="button" class="collection-filter" data-family="fruite" aria-pressed="false"><span class="collection-lang-fr">Fruités & agrumes</span><span class="collection-lang-en">Fruity & citrus</span></button>
+           <button type="button" class="collection-filter" data-family="ambre" aria-pressed="false"><span class="collection-lang-fr">Ambrés</span><span class="collection-lang-en">Amber</span></button>
           <button type="button" class="collection-filter" data-family="boise" aria-pressed="false"><span class="collection-lang-fr">Boisés</span><span class="collection-lang-en">Woody</span></button>
           <button type="button" class="collection-filter" data-family="floral" aria-pressed="false"><span class="collection-lang-fr">Floraux</span><span class="collection-lang-en">Floral</span></button>
-          <button type="button" class="collection-filter" data-family="musque" aria-pressed="false"><span class="collection-lang-fr">Musqués</span><span class="collection-lang-en">Musky</span></button>
+          <button type="button" class="collection-filter" data-family="chypre" aria-pressed="false"><span class="collection-lang-fr">Chyprés</span><span class="collection-lang-en">Chypre</span></button>
+           <button type="button" class="collection-filter" data-family="musque" aria-pressed="false"><span class="collection-lang-fr">Musqués</span><span class="collection-lang-en">Musky</span></button>
         </div>
+        <p class="collection-status" role="status" aria-live="polite" aria-atomic="true"><span id="collection-status-fr" class="collection-lang-fr">9 parfums dans la collection</span><span id="collection-status-en" class="collection-lang-en">9 fragrances in the collection</span></p>
         <div class="collection-grid">
-          <article class="collection-item" data-families="gourmand musque">
+          <article class="collection-item" data-family="gourmand">
             <div class="collection-photo photo-0" role="img" aria-label="Flacon Montale Mukhallat photographié dans ma collection"></div>
             <div class="collection-copy">
               <span class="collection-tag">Montale</span>
               <h3>Mukhallat</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : gourmand</span><span class="collection-lang-en">Main family: gourmand</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Fruité · vanillé · musqué</span><span class="collection-lang-en">Fruity · vanilla · musky</span></span>
               <p><span class="collection-lang-fr">Fraise, amande et vanille, sur un fond balsamique musqué : une gourmandise orientale.</span><span class="collection-lang-en">Strawberry, almond and vanilla over a musky balsamic base: an oriental gourmand.</span></p>
               <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
@@ -596,11 +604,12 @@
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand floral musque">
+          <article class="collection-item" data-family="gourmand">
             <div class="collection-photo photo-1" role="img" aria-label="Flacon Paris Corner Marshmallow Blush photographié dans ma collection"></div>
             <div class="collection-copy">
               <span class="collection-tag">Paris Corner</span>
               <h3>Marshmallow Blush</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : gourmand</span><span class="collection-lang-en">Main family: gourmand</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Guimauve · vanille · fruité</span><span class="collection-lang-en">Marshmallow · vanilla · fruity</span></span>
               <p><span class="collection-lang-fr">Une douceur de fruits rouges, crème fouettée et guimauve, relevée par la fleur d’oranger.</span><span class="collection-lang-en">Red berries, whipped cream and marshmallow sweetness lifted by orange blossom.</span></p>
               <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
@@ -612,11 +621,12 @@
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand ambre boise">
+          <article class="collection-item" data-family="gourmand">
             <div class="collection-photo photo-2" role="img" aria-label="Flacon Lattafa Yara Candy photographié dans ma collection"></div>
             <div class="collection-copy">
               <span class="collection-tag">Lattafa</span>
               <h3>Yara Candy</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : gourmand</span><span class="collection-lang-en">Main family: gourmand</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Fruité sucré · vanillé · ambré</span><span class="collection-lang-en">Candied fruit · vanilla · amber</span></span>
               <p><span class="collection-lang-fr">Des fruits acidulés, une fraise façon bonbon et un sirop vanillé sur un fond ambré.</span><span class="collection-lang-en">Tangy fruits and fizzy strawberry candy over vanilla syrup and an amber base.</span></p>
               <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
@@ -628,11 +638,12 @@
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand ambre boise floral musque">
+          <article class="collection-item" data-family="floral">
             <div class="collection-photo photo-3" role="img" aria-label="Flacon Lattafa Yara photographié dans ma collection"></div>
             <div class="collection-copy">
               <span class="collection-tag">Lattafa</span>
               <h3>Yara</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : floral doux</span><span class="collection-lang-en">Main family: soft floral</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Vanillé · floral · boisé</span><span class="collection-lang-en">Vanilla · floral · woody</span></span>
               <p><span class="collection-lang-fr">Une vanille douce et crémeuse, des fleurs poudrées et une touche tropicale.</span><span class="collection-lang-en">Soft creamy vanilla, powdery flowers and a tropical touch.</span></p>
               <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
@@ -644,11 +655,12 @@
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand floral musque">
+          <article class="collection-item" data-family="fruite">
             <div class="collection-photo photo-4" role="img" aria-label="Flacon Rave · Lattafa Now Women photographié dans ma collection"></div>
             <div class="collection-copy">
               <span class="collection-tag">Rave · Lattafa</span>
               <h3>Now Women</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : fruité</span><span class="collection-lang-en">Main family: fruity</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Fruits rouges · guimauve · musqué</span><span class="collection-lang-en">Red fruits · marshmallow · musk</span></span>
               <p><span class="collection-lang-fr">Fruits rouges et orange, cœur floral à la guimauve, fond vanillé et musqué.</span><span class="collection-lang-en">Red fruits and orange, a floral marshmallow heart and a vanilla-musk base.</span></p>
               <details><summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
@@ -660,50 +672,55 @@
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand ambre boise floral musque">
+          <article class="collection-item" data-family="ambre">
             <div class="collection-photo featured-photo featured-tonka" role="img" aria-label="Flacon Arabians Tonka de ma sélection de quatre parfums"></div>
             <div class="collection-copy">
               <span class="collection-tag">Montale</span>
               <h3>Arabians Tonka</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : ambré</span><span class="collection-lang-en">Main family: amber</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Ambré · gourmand · boisé · floral</span><span class="collection-lang-en">Amber · gourmand · woody · floral</span></span>
               <p><span class="collection-lang-fr">Bergamote, rose, oud et fève tonka sur un fond ambré.</span><span class="collection-lang-en">Bergamot, rose, oud and tonka bean over an amber base.</span></p>
               <a class="collection-feature-link" href="#fiche-arabians-tonka"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             </div>
           </article>
 
-          <article class="collection-item" data-families="ambre boise gourmand musque">
+          <article class="collection-item" data-family="boise">
             <div class="collection-photo featured-photo featured-tobacco" role="img" aria-label="Flacon Intense Red Tobacco de ma sélection de quatre parfums"></div>
             <div class="collection-copy">
               <span class="collection-tag">Mancera</span>
               <h3>Intense Red Tobacco</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : boisé-tabac</span><span class="collection-lang-en">Main family: woody tobacco</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Tabac · ambré · boisé · vanillé</span><span class="collection-lang-en">Tobacco · amber · woody · vanilla</span></span>
               <p><span class="collection-lang-fr">Tabac épicé et cuir sur un fond ambré et vanillé.</span><span class="collection-lang-en">Spiced tobacco and leather with amber and vanilla.</span></p>
               <a class="collection-feature-link" href="#fiche-intense-red-tobacco"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             </div>
           </article>
 
-          <article class="collection-item" data-families="ambre boise floral musque">
+          <article class="collection-item" data-family="ambre">
             <div class="collection-photo featured-photo featured-arena" role="img" aria-label="Flacon Lueur d'Espoir Arena Intense de ma sélection de quatre parfums"></div>
             <div class="collection-copy">
               <span class="collection-tag">Paris Corner · Emir</span>
               <h3>Lueur d’Espoir Arena Intense</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : ambré épicé</span><span class="collection-lang-en">Main family: spicy amber</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Ambré · épicé · boisé · musqué</span><span class="collection-lang-en">Amber · spicy · woody · musky</span></span>
               <p><span class="collection-lang-fr">Safran, rose, ambre et santal dans un accord épicé.</span><span class="collection-lang-en">Saffron, rose, amber and sandalwood in a spicy blend.</span></p>
               <a class="collection-feature-link" href="#fiche-arena-intense"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             </div>
           </article>
 
-          <article class="collection-item" data-families="gourmand ambre boise floral">
+          <article class="collection-item" data-family="boise">
             <div class="collection-photo featured-photo featured-oud" role="img" aria-label="Flacon Shaghaf Oud de ma sélection de quatre parfums"></div>
             <div class="collection-copy">
               <span class="collection-tag">Swiss Arabian</span>
               <h3>Shaghaf Oud</h3>
+               <p class="collection-primary"><span class="collection-lang-fr">Famille principale : boisé-oud</span><span class="collection-lang-en">Main family: woody oud</span></p>
               <span class="collection-tag"><span class="collection-lang-fr">Oud · gourmand · ambré · floral</span><span class="collection-lang-en">Oud · gourmand · amber · floral</span></span>
               <p><span class="collection-lang-fr">Oud, safran, rose et praliné sur une base vanillée.</span><span class="collection-lang-en">Oud, saffron, rose and praline with a vanilla base.</span></p>
               <a class="collection-feature-link" href="#fiche-shaghaf-oud"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             </div>
           </article>
         </div>
+        <p class="collection-empty" id="collection-empty" hidden><span class="collection-lang-fr">Aucun parfum de ma collection n’est encore classé dans cette famille. La rubrique attend mes prochains flacons.</span><span class="collection-lang-en">No fragrance in my collection belongs to this main family yet. This category is ready for future additions.</span></p>
         <aside class="collection-layering">
           <span class="collection-tag"><span class="collection-lang-fr">Associations à explorer · non encore testées</span><span class="collection-lang-en">Layering ideas · not yet tested</span></span>
           <h3><span class="collection-lang-fr">Quelques accords gourmands à imaginer.</span><span class="collection-lang-en">A few gourmand pairings to explore.</span></h3>
@@ -758,6 +775,7 @@
             <button type="button" class="choice" data-scent="boise" aria-pressed="false">Boisé</button>
             <button type="button" class="choice" data-scent="gourmand" aria-pressed="false">Gourmand</button>
             <button type="button" class="choice" data-scent="frais" aria-pressed="false">Frais</button>
+             <button type="button" class="choice" data-scent="chypre" aria-pressed="false">Chypré</button>
           </div>
           <div class="scent-result" aria-live="polite" aria-atomic="true">
             <strong id="scent-title">Ambré — enveloppant & chaleureux</strong>
@@ -809,19 +827,44 @@
       });
       personalCollage.src = 'mes-quatre-parfums.webp';
 
-      // Collection personnelle : filtres par familles, sans changer la langue courante.
-      document.querySelectorAll('.collection-filter').forEach(function (button) {
+      // Chaque flacon est rangé dans une seule famille principale.
+      // Les accords secondaires figurent dans les détails, sans dupliquer le flacon.
+      var perfumeFamilyButtons = document.querySelectorAll('.collection-filter');
+      var perfumeFamilyCards = document.querySelectorAll('.collection-item');
+      var perfumeFamilyLabels = {
+        gourmand: ['gourmands & vanillés', 'gourmand & vanilla'],
+        fruite: ['fruités & agrumes', 'fruity & citrus'],
+        ambre: ['ambrés', 'amber'],
+        boise: ['boisés', 'woody'],
+        floral: ['floraux', 'floral'],
+        chypre: ['chyprés', 'chypre'],
+        musque: ['musqués', 'musky']
+      };
+      function filterPerfumesByMainFamily(family) {
+        var count = 0;
+        perfumeFamilyButtons.forEach(function (button) {
+          button.setAttribute('aria-pressed', String(button.getAttribute('data-family') === family));
+        });
+        perfumeFamilyCards.forEach(function (item) {
+          var show = family === 'tous' || item.getAttribute('data-family') === family;
+          item.hidden = !show;
+          if (show) count += 1;
+        });
+        var label = perfumeFamilyLabels[family];
+        document.getElementById('collection-status-fr').textContent = family === 'tous'
+          ? count + ' parfums dans la collection'
+          : count + ' parfum' + (count > 1 ? 's' : '') + ' · ' + label[0];
+        document.getElementById('collection-status-en').textContent = family === 'tous'
+          ? count + ' fragrances in the collection'
+          : count + ' fragrance' + (count === 1 ? '' : 's') + ' · ' + label[1];
+        document.getElementById('collection-empty').hidden = count !== 0;
+      }
+      perfumeFamilyButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-          var family=button.getAttribute('data-family');
-          document.querySelectorAll('.collection-filter').forEach(function (item) {
-            item.setAttribute('aria-pressed',String(item===button));
-          });
-          document.querySelectorAll('.collection-item').forEach(function (item) {
-            var families=(item.getAttribute('data-families')||'').split(' ');
-            item.hidden=family!=='tous'&&families.indexOf(family)===-1;
-          });
+          filterPerfumesByMainFamily(button.getAttribute('data-family'));
         });
       });
+      filterPerfumesByMainFamily('tous');
       var buttons = document.querySelectorAll('.filter');
       var notes = document.querySelectorAll('.note');
       buttons.forEach(function (button) {
@@ -847,7 +890,8 @@
         ambre: ['Ambré — enveloppant & chaleureux','Imaginez des notes résineuses, douces et épicées, une atmosphère riche et réconfortante.'],
         boise: ['Boisé — profond & élégant','Santal, cèdre ou vétiver : des matières qui évoquent le bois, la terre et les paysages apaisants.'],
         gourmand: ['Gourmand — généreux & régressif','Vanille, caramel ou cacao : des facettes qui rappellent les douceurs et les souvenirs gourmands.'],
-        frais: ['Frais — vif & lumineux','Agrumes, notes vertes et accords aquatiques : une impression de clarté et de légèreté.']
+        frais: ['Frais — vif & lumineux','Agrumes, notes vertes et accords aquatiques : une impression de clarté et de légèreté.'],
+         chypre: ['Chypré — élégant & contrasté','Bergamote, patchouli et accords mousseux : une famille qui joue sur le contraste entre fraîcheur et profondeur.']
       };
       var scentButtons = document.querySelectorAll('.choice');
       scentButtons.forEach(function (button) {
