@@ -232,6 +232,13 @@
     .community-commerce-card h3{font:400 1.7rem Georgia,serif;margin:12px 0}
     .community-commerce-card p{color:var(--muted);font-size:.87rem;margin-bottom:24px}
     @media(max-width:700px){.community-commerce-grid{grid-template-columns:1fr}.community-commerce-card{padding:22px}}
+    .heritage-highlight{background:linear-gradient(140deg,#f6e8dc,#e8d7d4);border-top:1px solid var(--line)}
+    .heritage-inner{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:35px}
+    .heritage-text h2{font:400 clamp(2.1rem,4vw,3.4rem)/1.17 Georgia,serif;margin:15px 0 18px}
+    .heritage-text .lede{max-width:670px;margin-bottom:24px}
+    .heritage-art{background:radial-gradient(circle at 50% 34%,#dac4a4,#997d78 64%,#74525d);border-radius:200px 200px 22px 22px;min-height:335px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;color:#fff3df}
+    .heritage-art span{font:italic 7rem Georgia,serif}.heritage-art small{font-size:.68rem;letter-spacing:.12em;text-align:center}
+    @media(max-width:700px){.heritage-inner{grid-template-columns:1fr}.heritage-art{min-height:190px;border-radius:17px}.heritage-art span{font-size:4rem}}
     @media (max-width:940px) {
       .nav {gap:15px}
       .hero-grid {grid-template-columns:1fr 1fr;min-height:570px}
@@ -301,6 +308,7 @@
         <a href="#carnet">Le carnet</a>
         <a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a>
         <a href="./atelier-parfums.html"><span class="collection-lang-fr">Créer ses senteurs</span><span class="collection-lang-en">Make scents</span></a>
+        <a href="./histoire-parfum.html"><span class="collection-lang-fr">Histoire du parfum</span><span class="collection-lang-en">Perfume history</span></a>
         <a href="./communaute.html"><span class="collection-lang-fr">Communauté</span><span class="collection-lang-en">Community</span></a>
         <a href="./boutique.html"><span class="collection-lang-fr">Boutique</span><span class="collection-lang-en">Shop</span></a>
         <a href="#ma-collection"><span class="collection-lang-fr">Ma collection</span><span class="collection-lang-en">Collection</span></a>
@@ -697,6 +705,13 @@
 <a class="button secondary" href="./boutique.html"><span class="collection-lang-fr">Voir la vitrine</span><span class="collection-lang-en">View the showcase</span> <span aria-hidden="true">→</span></a>
 </article>
 </div></div></section>
+<section class="section heritage-highlight" id="heritage-parfum" aria-labelledby="titre-heritage-parfum"><div class="container heritage-inner">
+<div class="heritage-text"><span class="eyebrow"><span class="collection-lang-fr">L'empreinte du temps</span><span class="collection-lang-en">Scents through time</span></span>
+<h2 id="titre-heritage-parfum"><span class="collection-lang-fr">Des résines antiques aux parfums mystiques.</span><span class="collection-lang-en">From ancient resins to mystical fragrances.</span></h2>
+<p class="lede"><span class="collection-lang-fr">Myrrhe, encens, fleurs et bois parfumaient déjà le monde bien avant nos flacons modernes. Découvrez l'histoire de ces senteurs, des fumigations antiques à nos futures inspirations olfactives.</span><span class="collection-lang-en">Myrrh, frankincense, flowers and woods scented the world long before modern bottles. Explore this history, from ancient incense to our future fragrance inspirations.</span></p>
+<a class="button" href="./histoire-parfum.html"><span class="collection-lang-fr">Voyager dans l'histoire du parfum</span><span class="collection-lang-en">Explore perfume history</span> <span aria-hidden="true">→</span></a></div>
+<div class="heritage-art" aria-hidden="true"><span>✦</span><small><span class="collection-lang-fr">Myrrhe · Oliban · Bois</span><span class="collection-lang-en">Myrrh · Frankincense · Woods</span></small></div>
+</div></section>
     <section class="section signature" id="signature" aria-labelledby="titre-signature">
       <div class="container signature-grid">
         <div>
@@ -744,7 +759,7 @@
           <p>Un carnet dédié aux parfums, aux découvertes olfactives et gustatives, aux plantes aromatiques et aux conseils.</p>
         </div>
         <nav class="footer-nav" aria-label="Navigation du pied de page">
-          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a><a href="./atelier-parfums.html"><span class="collection-lang-fr">Atelier maison</span><span class="collection-lang-en">Home workshop</span></a><a href="./communaute.html"><span class="collection-lang-fr">Communauté</span><span class="collection-lang-en">Community</span></a><a href="./boutique.html"><span class="collection-lang-fr">Boutique</span><span class="collection-lang-en">Shop</span></a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
+          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a><a href="./atelier-parfums.html"><span class="collection-lang-fr">Atelier maison</span><span class="collection-lang-en">Home workshop</span></a><a href="./histoire-parfum.html"><span class="collection-lang-fr">Histoire du parfum</span><span class="collection-lang-en">Perfume history</span></a><a href="./communaute.html"><span class="collection-lang-fr">Communauté</span><span class="collection-lang-en">Community</span></a><a href="./boutique.html"><span class="collection-lang-fr">Boutique</span><span class="collection-lang-en">Shop</span></a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
         </nav>
       </div>
       <div class="footer-bottom"><span>© <span id="year">2026</span> Parfum-Titia.</span><span>Imaginé pour le plaisir des sens.</span></div>
