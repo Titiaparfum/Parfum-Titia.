@@ -224,6 +224,14 @@
     .atelier-highlight{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);padding:24px;margin-top:19px;border-radius:18px}
     .atelier-highlight strong{font-family:Georgia,serif;font-size:1.25rem;font-weight:400}
     .atelier-highlight p{font-size:.86rem;color:var(--muted);margin:5px 0 0;max-width:620px}
+    .community-commerce{background:#fff8f4;border-top:1px solid var(--line)}
+    .community-commerce h2{font:400 clamp(2.1rem,4vw,3.2rem)/1.16 Georgia,serif;margin:15px 0}
+    .community-commerce .lede{max-width:850px}
+    .community-commerce-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:27px}
+    .community-commerce-card{border-radius:19px;border:1px solid var(--line);background:var(--paper);padding:27px}
+    .community-commerce-card h3{font:400 1.7rem Georgia,serif;margin:12px 0}
+    .community-commerce-card p{color:var(--muted);font-size:.87rem;margin-bottom:24px}
+    @media(max-width:700px){.community-commerce-grid{grid-template-columns:1fr}.community-commerce-card{padding:22px}}
     @media (max-width:940px) {
       .nav {gap:15px}
       .hero-grid {grid-template-columns:1fr 1fr;min-height:570px}
@@ -293,6 +301,8 @@
         <a href="#carnet">Le carnet</a>
         <a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a>
         <a href="./atelier-parfums.html"><span class="collection-lang-fr">Créer ses senteurs</span><span class="collection-lang-en">Make scents</span></a>
+        <a href="./communaute.html"><span class="collection-lang-fr">Communauté</span><span class="collection-lang-en">Community</span></a>
+        <a href="./boutique.html"><span class="collection-lang-fr">Boutique</span><span class="collection-lang-en">Shop</span></a>
         <a href="#ma-collection"><span class="collection-lang-fr">Ma collection</span><span class="collection-lang-en">Collection</span></a>
         <a href="#signature">Mon sillage</a>
         <a href="#histoire">À propos</a>
@@ -669,6 +679,24 @@
       </div>
     </section>
 
+<section class="section community-commerce" id="partage" aria-labelledby="titre-partage"><div class="container">
+<span class="eyebrow"><span class="collection-lang-fr">Échanger & découvrir</span><span class="collection-lang-en">Connect & discover</span></span>
+<h2 id="titre-partage"><span class="collection-lang-fr">Le cercle Parfum-Titia</span><span class="collection-lang-en">The Parfum-Titia circle</span></h2>
+<p class="lede"><span class="collection-lang-fr">Partageons nos accords gourmands et épicés, nos tisanes et nos découvertes aromatiques. Un espace communautaire gratuit et une petite vitrine pour préparer de futures créations.</span><span class="collection-lang-en">Share gourmand and spicy fragrance pairings, herbal tea recipes and aromatic discoveries. A free community and a showcase for future creations.</span></p>
+<div class="community-commerce-grid">
+<article class="community-commerce-card">
+<span class="note-label"><span class="collection-lang-fr">Échanges et contributions</span><span class="collection-lang-en">Community and discussions</span></span>
+<h3><span class="collection-lang-fr">La communauté</span><span class="collection-lang-en">Our community</span></h3>
+<p><span class="collection-lang-fr">Publiez vos idées de layering, recettes de tisanes, expériences avec les plantes et discussions sur les échantillons. Un compte GitHub gratuit est nécessaire pour publier.</span><span class="collection-lang-en">Share perfume layering, herbal recipes, plant experiences and sample discussions. A free GitHub account is required to post.</span></p>
+<a class="button" href="./communaute.html"><span class="collection-lang-fr">Entrer dans la communauté</span><span class="collection-lang-en">Join the community</span> <span aria-hidden="true">→</span></a>
+</article>
+<article class="community-commerce-card">
+<span class="note-label"><span class="collection-lang-fr">Catalogue en préparation</span><span class="collection-lang-en">Catalog coming soon</span></span>
+<h3><span class="collection-lang-fr">La future boutique</span><span class="collection-lang-en">Our future shop</span></h3>
+<p><span class="collection-lang-fr">Découvrir les projets de créations parfumées et d’échanges de fioles. Aucun produit n’est encore en vente, et aucun paiement n’est activé.</span><span class="collection-lang-en">Explore planned fragrance creations and sample exchanges. No products are currently for sale and payments are not enabled.</span></p>
+<a class="button secondary" href="./boutique.html"><span class="collection-lang-fr">Voir la vitrine</span><span class="collection-lang-en">View the showcase</span> <span aria-hidden="true">→</span></a>
+</article>
+</div></div></section>
     <section class="section signature" id="signature" aria-labelledby="titre-signature">
       <div class="container signature-grid">
         <div>
@@ -716,7 +744,7 @@
           <p>Un carnet dédié aux parfums, aux découvertes olfactives et gustatives, aux plantes aromatiques et aux conseils.</p>
         </div>
         <nav class="footer-nav" aria-label="Navigation du pied de page">
-          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a><a href="./atelier-parfums.html"><span class="collection-lang-fr">Atelier maison</span><span class="collection-lang-en">Home workshop</span></a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
+          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a><a href="./atelier-parfums.html"><span class="collection-lang-fr">Atelier maison</span><span class="collection-lang-en">Home workshop</span></a><a href="./communaute.html"><span class="collection-lang-fr">Communauté</span><span class="collection-lang-en">Community</span></a><a href="./boutique.html"><span class="collection-lang-fr">Boutique</span><span class="collection-lang-en">Shop</span></a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
         </nav>
       </div>
       <div class="footer-bottom"><span>© <span id="year">2026</span> Parfum-Titia.</span><span>Imaginé pour le plaisir des sens.</span></div>
