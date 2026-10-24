@@ -45,7 +45,7 @@ td small{display:block;color:var(--muted)}
 <main><span class="eyebrow">Outil local · aucun stockage public des e-mails</span>
 <h1>Suivi des abonnés et cloche des paliers</h1>
 <p class="lead">Importez un export CSV de votre liste d'abonnés. Ce tableau analyse le fichier <strong>uniquement dans votre navigateur</strong>. Aucune adresse, aucun pseudo ni aucun fichier n'est envoyé à GitHub ou à Parfum-Titia. Utilisez de préférence votre iPhone ou ordinateur personnel.</p>
-<div class="note"><strong>Important :</strong> cet outil est une analyse locale, et non un service d'inscription ni une notification automatique lorsque la page est fermée. Pour compter de véritables abonnés, il faut d'abord connecter un formulaire privé à une liste d'e-mails confirmés (par exemple Brevo). L'export de contacts peut identifier les abonnés confirmés, mais <strong>le 10 000ᵉ confirmé exige l'ordre exact des confirmations</strong>.</div>
+<div class="note"><strong>Important :</strong> cet outil est une analyse locale, et non un service d'inscription ni une notification automatique lorsque la page est fermée. Pour compter de véritables abonnés, il faut connecter un formulaire privé à une liste d'e-mails confirmés (par exemple Brevo). Un export de contacts actuels donne un nombre à une date donnée, mais <strong>le 10 000ᵉ inscrit de toute l'histoire du site exige un registre chronologique exhaustif des confirmations, même si des personnes se sont désabonnées depuis</strong>.</div>
 <section class="panel" aria-labelledby="import-title"><h2 id="import-title">1. Importer et contrôler les inscriptions</h2>
 <label class="field">Choisir un export CSV (Brevo ou registre préparé)
 <input id="csvfile" type="file" accept=".csv,text/csv,text/plain"></label>
@@ -60,17 +60,18 @@ td small{display:block;color:var(--muted)}
 <label class="field">Participation vérifiée (oui/non) <select id="col-activity"></select></label>
 <label class="field">« J'aime » vérifié (oui/non) <select id="col-like"></select></label>
 </div>
-<label class="check"><input type="checkbox" id="date-certified"><span>Je confirme que la date sélectionnée est bien l'horodatage de <strong>confirmation de l'inscription</strong>, et non la date de création du contact. Les confirmations ont été archivées sans interruption.</span></label>
+<label class="check"><input type="checkbox" id="date-certified"><span>Les dates choisies sont réellement celles de la <strong>confirmation e-mail</strong> (pas les dates de création du contact).</span></label>
+<label class="check"><input type="checkbox" id="historical-ledger"><span>Ce fichier est un <strong>journal historique complet</strong> de toutes les inscriptions confirmées depuis le lancement, y compris celles d'abonnés ensuite désinscrits. Il ne s'agit pas seulement d'une liste actuelle de contacts exportée depuis Brevo. Sans ce journal exhaustif, le rang du 10 000ᵉ ne peut pas être certifié.</span></label>
 <div class="actions"><button id="analyze" class="action" type="button">Analyser mes abonnés</button><button id="reset" class="action secondary" type="button">Effacer les données importées</button></div></div>
 </section>
 <section id="results" class="hidden" aria-live="polite">
 <div class="stats">
-<div class="stat"><b id="n-confirmed">0</b><span>Abonnés avec confirmation explicite</span></div>
+<div class="stat"><b id="n-confirmed">0</b><span>Inscriptions e-mail confirmées dans ce fichier</span></div>
 <div class="stat"><b id="n-active">—</b><span>Participation vérifiée</span></div>
 <div class="stat"><b id="n-next">500</b><span>Prochain palier de 500</span></div>
 </div>
 <div id="bell" class="bell" role="status"><div class="symbol" aria-hidden="true">🔔</div><div><strong id="bell-title">Cloche des paliers</strong><p id="bell-msg">Aucun palier franchi depuis le dernier contrôle enregistré sur cet appareil.</p><button id="ding" class="action secondary" type="button">Faire sonner la cloche</button></div></div>
-<div class="panel"><h2>2. Paliers de la communauté</h2><p class="status">Les paliers reflètent les inscriptions e-mail confirmées uniques, et non les visiteurs ni les « J'aime ».</p><div class="kpis" id="milestones"></div>
+<div class="panel"><h2>2. Paliers de la communauté</h2><p class="status">Les paliers reflètent les inscriptions e-mail confirmées uniques figurant dans le fichier choisi, et non un comptage en direct des visiteurs ni des « J'aime ». Un export historique ne donne pas automatiquement le nombre actuel d'abonnés encore inscrits.</p><div class="kpis" id="milestones"></div>
 <p class="status" id="ranking-status"></p></div>
 <div class="panel"><h2>3. Le membre de chaque palier cadeau</h2>
 <p class="status">10 000, 20 000, 30 000, 40 000 et 50 000 : seul le membre confirmé au rang précis est examiné. Il doit ensuite être reconnu comme participant actif et avoir mis un « J'aime ». Les volumes (6, 10, 20, 30, 100 ml) et modalités exactes feront l'objet d'un règlement avant l'ouverture de l'opération.</p>
@@ -95,7 +96,7 @@ function columnGuess(type){var patterns={email:["email","emailaddress","courriel
 function addOptions(id,guess){var sel=$(id);sel.textContent="";var blank=document.createElement("option");blank.value="";blank.textContent="— Non disponible —";sel.appendChild(blank);headers.forEach(function(t,i){var o=document.createElement("option");o.value=String(i);o.textContent=(i+1)+". "+(t||"(sans titre)");sel.appendChild(o)});sel.value=columnGuess(guess)}
 function cell(row,which){var sel=$(which).value;if(sel==="")return "";return String(row[Number(sel)]||"").trim()}
 function answer(v){var x=normalize(v);if(["oui","yes","y","true","1","confirmed","confirme","verifie","active","actif","liked","like","subscribed"].indexOf(x)>=0)return "yes";if(["non","no","n","false","0","unconfirmed","pending","unsubscribed","inactive"].indexOf(x)>=0)return "no";return "unknown"}
-function parseDate(text){var s=String(text||"").trim();if(!s)return NaN;var d=Date.parse(s);if(!isNaN(d))return d;var m=s.match(/^(\d{2})[\/.-](\d{2})[\/.-](\d{4})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);if(m){var a=Date.parse(m[3]+"-"+m[2]+"-"+m[1]+"T"+(m[4]||"00")+":"+(m[5]||"00")+":"+(m[6]||"00"));if(!isNaN(a))return a}return NaN}
+function parseDate(text){var s=String(text||"").trim();if(!s)return NaN;var m=s.match(/^(\d{2})[\/.-](\d{2})[\/.-](\d{4})(?:[ T](\d{2}):(\d{2})(?::(\d{2}))?)?/);if(m){var a=Date.parse(m[3]+"-"+m[2]+"-"+m[1]+"T"+(m[4]||"00")+":"+(m[5]||"00")+":"+(m[6]||"00"));if(!isNaN(a))return a}return Date.parse(s)}
 function el(name,txt,cls){var e=document.createElement(name);if(txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e}
 function setChildren(id,children){var host=$(id);host.textContent="";children.forEach(function(e){host.appendChild(e)})}
 function checkRank(records){return !!$("date-certified").checked && $("col-date").value!=="" && records.length>0&&records.every(function(v){return Number.isFinite(v.timestamp)})&&records.every(function(v,i){return i===0||records[i-1].timestamp<v.timestamp})}
@@ -115,8 +116,8 @@ $("results").classList.remove("hidden");
 var ordered=$("date-certified").checked&&$("col-date").value!==""&&confirmedRecords.every(function(r){return Number.isFinite(r.timestamp)});
 if(ordered)confirmedRecords.sort(function(a,b){return a.timestamp-b.timestamp});
 var unique=ordered&&confirmedRecords.every(function(r,i){return i===0||r.timestamp!==confirmedRecords[i-1].timestamp});
-var ranked=ordered&&unique;
-$("ranking-status").textContent=ranked?"Le classement repose sur la date de confirmation certifiée et ne présente aucune égalité d'horodatage. Vérifier l'exhaustivité des confirmations avant d'attribuer un cadeau.":"Rang exact NON VÉRIFIÉ : choisir les horodatages réels de confirmation, cocher la certification et utiliser un historique complet sans ex æquo. La date de création Brevo ne suffit pas.";
+var ranked=ordered&&unique&&$("historical-ledger").checked;
+$("ranking-status").textContent=ranked?"Classement calculé depuis un journal déclaré complet, avec dates de confirmation certifiées sans égalités. Vérifier indépendamment le registre avant d'attribuer un cadeau.":"Rang exact NON VÉRIFIÉ : il faut les horodatages réels de confirmation, un journal historique complet (incluant les anciens abonnés désinscrits), sans ex æquo. Une liste courante et la date de création Brevo ne suffisent pas.";
 var steps=[10000,20000,30000,40000,50000],tbody=$("winners");tbody.textContent="";
 steps.forEach(function(step){var tr=el("tr"),record=count>=step&&ranked?confirmedRecords[step-1]:null;
 tr.appendChild(el("td",num(step)+"ᵉ"));
@@ -130,7 +131,7 @@ tbody.appendChild(tr)});
 var milestones=$("milestones");milestones.textContent="";for(var m=500;m<=Math.max(500,Math.min(50000,(Math.floor(count/500)+1)*500));m+=500){var span=el("span",num(m), "pill"+(count>=m?" achieved":""));milestones.appendChild(span)}
 var previous=lastCount;var past=Math.floor((previous===null?0:previous)/500)*500,now=Math.floor(count/500)*500;
 if(now>past){$("bell-title").textContent="🔔 Palier"+(now>500?"s":"")+" franchi"+(now>500?"s":"")+" !";var crossed=[];for(var n=past+500;n<=now;n+=500)crossed.push(num(n));$("bell-msg").textContent="Seuil"+(crossed.length>1?"s":"")+" atteint"+(crossed.length>1?"s":"")+" : "+crossed.join(", ")+". Cloche locale : les alertes ne fonctionnent pas lorsque la page est fermée.";$("bell").style.background="#f4e2ca";}else{$("bell-title").textContent="Cloche des paliers";$("bell-msg").textContent="Pas de nouveau palier de 500 franchi depuis le précédent contrôle enregistré sur cet appareil."}
-lastCount=count;try{localStorage.setItem(storageKey,String(count))}catch(e){}
+lastCount=Math.max(previous===null?0:previous,count);try{localStorage.setItem(storageKey,String(lastCount))}catch(e){}
 if(count===0){$("ranking-status").textContent="Aucun abonné confirmé valide trouvé dans ce fichier ; vérifiez le statut de double confirmation."}
 }
 $("csvfile").addEventListener("change",function(ev){var file=ev.target.files&&ev.target.files[0];if(!file)return;
@@ -139,7 +140,7 @@ var reader=new FileReader();reader.onload=function(){var text=String(reader.resu
 if(parsed.length<2){$("fileinfo").textContent="Le fichier ne contient pas de lignes à analyser.";return}
 headers=parsed.shift().map(function(s){return s.trim()});csvRows=parsed;
 [["col-email","email"],["col-confirm","confirm"],["col-date","date"],["col-username","username"],["col-activity","activity"],["col-like","like"]].forEach(function(pair){addOptions(pair[0],pair[1])});
-$("date-certified").checked=false;$("mapping").classList.remove("hidden");$("results").classList.add("hidden");
+$("date-certified").checked=false;$("historical-ledger").checked=false;$("mapping").classList.remove("hidden");$("results").classList.add("hidden");
 $("fileinfo").textContent="Fichier chargé localement : "+num(csvRows.length)+" lignes, "+num(headers.length)+" colonnes. Aucune donnée n'a quitté cet appareil.";
 };reader.onerror=function(){$("fileinfo").textContent="Impossible de lire le fichier."};reader.readAsText(file,"UTF-8")});
 $("analyze").addEventListener("click",analyze);
