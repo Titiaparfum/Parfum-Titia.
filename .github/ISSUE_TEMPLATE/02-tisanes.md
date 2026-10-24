@@ -17,6 +17,11 @@ title: "[Tisane] "
 ## Origine de la recette / Recipe origin
 - Recette personnelle, familiale, traditionnelle ou source publiée ? / Personal, family, traditional or published source?
 
+## Dosages et vérification des interactions / Quantities and medication-interaction checks
+- Vérifiez que les plantes et fleurs utilisées sont comestibles et que les dosages sont adaptés. / Confirm all plants and flowers are edible and quantities are appropriate.
+- Prenez-vous des médicaments pouvant interagir ? Vérifiez avec votre pharmacien ou médecin, sans divulguer votre dossier médical ici. / Could your medicines interact? Check with your pharmacist or doctor, and do not share private medical information here.
+- En cas de doute sur l'espèce ou son usage, demandez conseil à un herboriste qualifié. / If unsure about identification or use, consult a qualified herbalist.
+
 ## Précautions connues et sources / Known precautions and sources
 
 ---
