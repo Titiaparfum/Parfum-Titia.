@@ -221,6 +221,9 @@
     .footer-bottom {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:.76rem;color:#bdafaa}
     .universe-link{display:inline-flex;align-items:center;gap:7px;margin-top:5px;color:var(--wine);text-decoration:underline;text-underline-offset:4px;font-weight:750;font-size:.88rem}
     .universe-link:hover{color:var(--wine-deep)}
+    .atelier-highlight{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);padding:24px;margin-top:19px;border-radius:18px}
+    .atelier-highlight strong{font-family:Georgia,serif;font-size:1.25rem;font-weight:400}
+    .atelier-highlight p{font-size:.86rem;color:var(--muted);margin:5px 0 0;max-width:620px}
     @media (max-width:940px) {
       .nav {gap:15px}
       .hero-grid {grid-template-columns:1fr 1fr;min-height:570px}
@@ -279,7 +282,6 @@
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#accueil" aria-label="Parfum-Titia, accueil">
@@ -289,6 +291,8 @@
       <nav class="nav" aria-label="Navigation principale">
         <a href="#univers">Univers</a>
         <a href="#carnet">Le carnet</a>
+        <a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a>
+        <a href="./atelier-parfums.html"><span class="collection-lang-fr">Créer ses senteurs</span><span class="collection-lang-en">Make scents</span></a>
         <a href="#ma-collection"><span class="collection-lang-fr">Ma collection</span><span class="collection-lang-en">Collection</span></a>
         <a href="#signature">Mon sillage</a>
         <a href="#histoire">À propos</a>
@@ -351,12 +355,17 @@
           </article>
           <article class="universe-card">
             <div class="universe-art flavor" aria-hidden="true"><small>02 / GUSTATIF</small><span class="universe-symbol">S</span></div>
-            <div class="universe-body"><h3>Saveurs & gourmandises</h3><p>Vanille, épices, fruits et associations inattendues : savourer la richesse des découvertes gustatives.</p><a class="universe-link" href="#notes" data-go-filter="saveurs">Explorer les saveurs <span aria-hidden="true">→</span></a></div>
+            <div class="universe-body"><h3>Saveurs & gourmandises</h3><p>Vanille, épices, fruits et associations inattendues : savourer la richesse des découvertes gustatives.</p><a class="universe-link" href="./tisanes-plantes.html#recettes">Explorer les saveurs <span aria-hidden="true">→</span></a></div>
           </article>
           <article class="universe-card">
             <div class="universe-art plants" aria-hidden="true"><small>03 / BOTANIQUE</small><span class="universe-symbol">V</span></div>
-            <div class="universe-body"><h3>Plantes aromatiques</h3><p>Du jardin aux petits rituels du quotidien, découvrir les plantes et leurs parfums naturels.</p><a class="universe-link" href="#notes" data-go-filter="plantes">Explorer les plantes <span aria-hidden="true">→</span></a></div>
+            <div class="universe-body"><h3>Plantes aromatiques</h3><p>Du jardin aux petits rituels du quotidien, découvrir les plantes et leurs parfums naturels.</p><a class="universe-link" href="./tisanes-plantes.html#plantes">Explorer les plantes <span aria-hidden="true">→</span></a></div>
           </article>
+        </div>
+        <div class="atelier-highlight">
+          <div><strong><span class="collection-lang-fr">À découvrir : mon atelier de parfums maison</span><span class="collection-lang-en">Discover: my homemade fragrance workshop</span></strong>
+          <p><span class="collection-lang-fr">Sachets de plantes, parfums d’ambiance et accords à essayer sur des mouillettes : des idées concrètes, sans mélange corporel risqué.</span><span class="collection-lang-en">Herb sachets, home scents and fragrance pairings on blotters: practical ideas with clear safety guidance.</span></p></div>
+          <a class="button secondary" href="./atelier-parfums.html"><span class="collection-lang-fr">Ouvrir l’atelier</span><span class="collection-lang-en">Open the workshop</span> <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -707,7 +716,7 @@
           <p>Un carnet dédié aux parfums, aux découvertes olfactives et gustatives, aux plantes aromatiques et aux conseils.</p>
         </div>
         <nav class="footer-nav" aria-label="Navigation du pied de page">
-          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
+          <a href="#univers">Univers</a><a href="#carnet">Carnet</a><a href="./tisanes-plantes.html"><span class="collection-lang-fr">Tisanes & plantes</span><span class="collection-lang-en">Teas & plants</span></a><a href="./atelier-parfums.html"><span class="collection-lang-fr">Atelier maison</span><span class="collection-lang-en">Home workshop</span></a><a href="#signature">Mon sillage</a><a href="#histoire">À propos</a>
         </nav>
       </div>
       <div class="footer-bottom"><span>© <span id="year">2026</span> Parfum-Titia.</span><span>Imaginé pour le plaisir des sens.</span></div>
