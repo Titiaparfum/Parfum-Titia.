@@ -293,7 +293,24 @@
       html {scroll-behavior:auto}
       *,*::before,*::after {transition:none!important}
     }
-  </style>
+  
+/* Un compteur public : uniquement les 👍 enregistrés sur l'issue GitHub, jamais les visites. */
+.like-banner{background:#fff9f3;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.like-banner-inner{display:grid;grid-template-columns:65px minmax(0,1fr) minmax(240px,340px);align-items:center;gap:24px}
+.like-thumb{font-size:2.7rem;background:#f2e6d9;border-radius:18px;text-align:center;padding:14px 0}
+.like-banner-copy h2{font-size:clamp(1.6rem,3vw,2.25rem);margin:8px 0}
+.like-banner-copy p{font-size:.88rem;color:var(--muted);margin:0;max-width:500px}
+.like-banner-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+.like-count{display:flex;align-items:center;gap:8px}
+.like-count strong{font:400 2.1rem Georgia,serif;color:var(--wine-deep);min-width:38px}
+.like-count span{font-size:.82rem;font-weight:750;color:var(--wine)}
+.like-banner-actions .button{padding:10px 17px;font-size:.81rem}
+.like-refresh{border:0;background:transparent;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:var(--wine);font-weight:700;font-size:.8rem;padding:6px}
+.like-guidance,.like-status{color:var(--muted);font-size:.76rem;line-height:1.5;flex-basis:100%;margin:0}
+.like-status{font-style:italic}
+@media(max-width:880px){.like-banner-inner{grid-template-columns:65px minmax(0,1fr)}.like-banner-actions{grid-column:2}}
+@media(max-width:580px){.like-banner-inner{grid-template-columns:1fr;gap:13px}.like-thumb{display:none}.like-banner-actions{grid-column:auto}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -358,6 +375,22 @@
       </div>
     </section>
 
+<section class="like-banner" id="jaime" aria-labelledby="titre-jaime">
+<div class="container like-banner-inner">
+<div class="like-thumb" aria-hidden="true">👍</div>
+<div class="like-banner-copy">
+<span class="eyebrow"><span class="collection-lang-fr">Votre avis compte</span><span class="collection-lang-en">Your opinion matters</span></span>
+<h2 id="titre-jaime"><span class="collection-lang-fr">Vous aimez Parfum-Titia ?</span><span class="collection-lang-en">Enjoy Parfum-Titia?</span></h2>
+<p><span class="collection-lang-fr">Soutenez le site avec un pouce 👍. Le compteur indique les véritables « J’aime » enregistrés sur GitHub, pas le nombre de visiteurs.</span><span class="collection-lang-en">Give the site a thumbs-up 👍. The count comes from real GitHub reactions, not visitor numbers.</span></p>
+</div>
+<div class="like-banner-actions">
+<div class="like-count" aria-label="Nombre de pouces J'aime / Number of thumbs-up reactions"><strong data-like-count aria-live="polite">—</strong><span><span class="collection-lang-fr">pouces 👍</span><span class="collection-lang-en">thumbs up 👍</span></span></div>
+<a class="button" href="https://github.com/Titiaparfum/Parfum-Titia./issues/3" target="_blank" rel="noopener noreferrer" title="Sur GitHub, cliquez sur la réaction 👍 / On GitHub, select the 👍 reaction"><span class="collection-lang-fr">👍 Mettre J'aime</span><span class="collection-lang-en">👍 Give a like</span><span aria-hidden="true">↗</span></a>
+<button type="button" class="like-refresh" data-like-refresh><span class="collection-lang-fr">Actualiser le compteur ↻</span><span class="collection-lang-en">Refresh likes ↻</span></button>
+<p class="like-guidance"><span class="collection-lang-fr">Un compte GitHub gratuit est nécessaire. Ouvrez le lien puis cliquez sur 👍 sous la publication.</span><span class="collection-lang-en">A free GitHub account is needed. Open the link, then select 👍 under the post.</span></p>
+<p class="like-status" data-like-status aria-live="polite"><span class="collection-lang-fr" data-like-fr>Chargement des réactions réelles…</span><span class="collection-lang-en" data-like-en>Loading verified reactions…</span></p>
+</div>
+</div></section>
     <div class="marquee">Parfums <span>✦</span> Saveurs <span>✦</span> Plantes aromatiques <span>✦</span> Conseils & découvertes</div>
 
     <section class="section" id="univers" aria-labelledby="titre-univers">
@@ -903,5 +936,6 @@
       setLanguage(saved);
     }());
   </script>
+<script src="./likes.js" defer></script>
 </body>
 </html>
