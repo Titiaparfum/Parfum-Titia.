@@ -182,6 +182,7 @@
     .collection-photo.photo-kasoof-white-extract{background-image:url("kasoof-white-extract-asdaaf.webp");background-size:cover;background-position:center;background-color:#e8dfcb}
     .collection-photo.photo-lattafa-victoria{background-image:url("victoria-lattafa.webp");background-size:cover;background-position:center;background-color:#b7cad1}
     .collection-photo.photo-voux-zeste-emir{background-image:url("voux-zeste-emir-paris-corner.webp");background-size:cover;background-position:center;background-color:#d8b432}
+    .collection-photo.photo-casamorati-italica{background-image:url("italica-casamorati-xerjoff.webp");background-size:cover;background-position:center;background-color:#77364b}
     /* Quatre photographies du carnet intégrées au classement olfactif. */
     .collection-photo.featured-photo{display:grid;place-items:center;background-image:none;background-color:#f3e8df;padding:8px}
     .collection-photo.featured-photo::before{content:"";display:block;width:100%;max-width:180px;aspect-ratio:1;background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;border-radius:12px}
@@ -348,6 +349,12 @@
     .collection-journal-tip{font-style:italic;font-size:.74rem!important}
     .collection-editorial{margin:16px 0 20px;padding:17px 20px;border-left:3px solid var(--wine);background:#fff9f5;border-radius:0 12px 12px 0}
     .collection-editorial p{margin:0;color:var(--muted);font-size:.87rem;line-height:1.65}
+
+  
+    .collection-profile-fit{margin:12px 0 16px;padding:12px 13px;border-radius:10px;border:1px solid var(--line);background:#fff8f0}
+    .collection-profile-fit .collection-journal-label{margin-top:0!important}
+    .collection-profile-fit p{font-size:.81rem;line-height:1.6}
+    .collection-profile-fit .collection-profile-caveat{font-size:.72rem;color:var(--muted);font-style:italic}
 
   </style>
 </head>
@@ -608,7 +615,7 @@
         <div class="collection-head">
           <span class="eyebrow"><span class="collection-lang-fr">Mes flacons photographiés</span><span class="collection-lang-en">Photographs from my collection</span></span>
           <h2 id="titre-collection"><span class="collection-lang-fr">Ma collection, par familles olfactives.</span><span class="collection-lang-en">My collection, by fragrance family.</span></h2>
-          <p class="lede"><span class="collection-lang-fr">Explorez mes vingt-quatre parfums selon leur famille olfactive principale : chaque flacon apparaît dans une seule rubrique, même s’il possède plusieurs accords secondaires. Cliquez sur une famille, puis ouvrez sa fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore my twenty-four fragrances by their main scent family: each bottle appears in just one category, even if it has secondary accords. Choose a family, then open the fragrance details.</span></p>
+          <p class="lede"><span class="collection-lang-fr">Explorez mes vingt-cinq parfums selon leur famille olfactive principale : chaque flacon apparaît dans une seule rubrique, même s’il possède plusieurs accords secondaires. Cliquez sur une famille, puis ouvrez sa fiche pour découvrir les notes et mes impressions.</span><span class="collection-lang-en">Explore my twenty-five fragrances by their main scent family: each bottle appears in just one category, even if it has secondary accords. Choose a family, then open the fragrance details.</span></p>
         </div>
         <div class="collection-editorial">
           <p><span class="collection-lang-fr">Mon univers : des parfums opulents, expressifs, avec un sillage qui se remarque et une tenue prolongée. Je distingue mes ressentis réellement partagés des idées à tester. Sur chaque fiche, deux combinaisons sont proposées à partir de ma collection ; je les enrichirai au fur et à mesure de mes découvertes.</span><span class="collection-lang-en">My taste: opulent and expressive fragrances with noticeable projection and lasting power. I distinguish my actual impressions from suggestions I have not yet tested. Each fragrance has two combinations selected from my collection, to be expanded as I discover more.</span></p>
@@ -624,7 +631,7 @@
           <button type="button" class="collection-filter" data-family="chypre" aria-pressed="false"><span class="collection-lang-fr">Chyprés</span><span class="collection-lang-en">Chypre</span></button>
            <button type="button" class="collection-filter" data-family="musque" aria-pressed="false"><span class="collection-lang-fr">Musqués</span><span class="collection-lang-en">Musky</span></button>
         </div>
-        <p class="collection-status" role="status" aria-live="polite" aria-atomic="true"><span id="collection-status-fr" class="collection-lang-fr">24 parfums dans la collection</span><span id="collection-status-en" class="collection-lang-en">24 fragrances in the collection</span></p>
+        <p class="collection-status" role="status" aria-live="polite" aria-atomic="true"><span id="collection-status-fr" class="collection-lang-fr">25 parfums dans la collection</span><span id="collection-status-en" class="collection-lang-en">25 fragrances in the collection</span></p>
         <div class="collection-grid">
           <article class="collection-item" data-family="gourmand">
             <div class="collection-photo photo-0" role="img" aria-label="Flacon Montale Mukhallat photographié dans ma collection"></div>
@@ -645,6 +652,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Très compatible avec les gourmandises enveloppantes : fraise, amande et musc. Peut sembler plus doux que les orientaux à l’oud ; puissance à confirmer.</span><span class="collection-lang-en">Sweet strawberry, almond and musk suit enveloping gourmands. May feel softer than oud orientals; projection needs testing.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Mukhallat + Vanilla Freak</strong> — <span class="collection-lang-fr">Fraise, amande et musc rencontrent une vanille pâtissière plus crémeuse.</span><span class="collection-lang-en">Strawberry, almond and musk meet richer pastry vanilla.</span></li>
@@ -674,6 +686,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">La guimauve fruitée correspond à mon goût du sucre, mais pourrait manquer du caractère écrasant que je recherche seule.</span><span class="collection-lang-en">Fruity marshmallow matches my sweet tooth but could lack the overwhelming character I seek on its own.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Marshmallow Blush + Scandal Absolu</strong> — <span class="collection-lang-fr">Guimauve fruitée et figue noire, avec une tubéreuse florale.</span><span class="collection-lang-en">Fruity marshmallow and black fig with floral tuberose.</span></li>
@@ -703,6 +720,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Son fruité façon bonbon et sa vanille me plaisent sur le papier. Peut-être plus doux que mes orientaux opulents.</span><span class="collection-lang-en">Candied fruit and vanilla sound appealing, perhaps softer than my opulent orientals.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Yara Candy + Ajayeb Dubai Portrait</strong> — <span class="collection-lang-fr">Les fruits façon bonbon rencontrent la mangue tropicale.</span><span class="collection-lang-en">Candied fruits meet tropical mango.</span></li>
@@ -733,6 +755,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Vanille pâtissière et amande : excellent accord avec mon goût pour les parfums très sucrés. Le sillage réel reste à tester.</span><span class="collection-lang-en">Pastry vanilla and almond strongly match my taste for very sweet scents. Actual projection needs testing.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Vanilla Freak + Scandal Intense</strong> — <span class="collection-lang-fr">La vanille pâtissière renforce la vanille, la cardamome et l’ylang-ylang.</span><span class="collection-lang-en">Pastry vanilla reinforces vanilla, cardamom and ylang-ylang.</span></li>
@@ -763,6 +790,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Fraise, framboise et guimauve : idéal pour mon côté gourmand fruité ; à renforcer par une rose ou un oud si je veux davantage de profondeur.</span><span class="collection-lang-en">Strawberry, raspberry and marshmallow suit my fruity gourmand side; rose or oud could add depth.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Mallow Madness + Atomic Rose</strong> — <span class="collection-lang-fr">La guimauve fruitée tempère une rose florale affirmée.</span><span class="collection-lang-en">Fruity marshmallow could soften a bold floral rose.</span></li>
@@ -793,6 +825,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Chocolat noir et caramel évoquent une gourmandise dense et presque excessive, très dans mon univers. Intensité non vérifiée.</span><span class="collection-lang-en">Dark chocolate and caramel suggest a rich, almost excessive gourmand I may love; strength not verified.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Choco Overdose + Bade’e Al Oud Amethyst</strong> — <span class="collection-lang-fr">Chocolat noir et rose-oud ambrée pour une signature contrastée.</span><span class="collection-lang-en">Dark chocolate and amber rose-oud for a contrasting scent.</span></li>
@@ -823,6 +860,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Le citron meringué et la vanille plaisent à ma gourmandise ; plus frais que mes orientaux très opulents.</span><span class="collection-lang-en">Lemon meringue and vanilla match my gourmand side but feel fresher than my most opulent orientals.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Victoria + Aoud Purple Rose</strong> — <span class="collection-lang-fr">Le citron meringué éclairerait une rose épicée et boisée.</span><span class="collection-lang-en">Lemon meringue could brighten spicy woody rose.</span></li>
@@ -853,6 +895,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Agrumes, caramel, tonka et vanille : un contraste frais-sucré très compatible avec mes goûts. Tenue et projection restent à découvrir.</span><span class="collection-lang-en">Citrus, caramel, tonka and vanilla offer a fresh-sweet contrast that fits my tastes. Longevity and projection remain to be tested.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Voux Zeste + Scandal Absolu</strong> — <span class="collection-lang-fr">Le caramel aux agrumes pourrait rehausser la figue noire et le santal.</span><span class="collection-lang-en">Citrus caramel could lift black fig and sandalwood.</span></li>
@@ -861,6 +908,41 @@
               <p class="collection-journal-tip"><span class="collection-lang-fr">Commencer avec peu de produit, sur des zones séparées, puis ajuster selon le ressenti. Ces idées ne constituent pas des tests de sillage ni de tenue.</span><span class="collection-lang-en">Start with small amounts on separate areas, then adjust to taste. These ideas are not verified longevity or projection tests.</span></p>
             </details>
           </div>
+          </article>
+
+          <article class="collection-item" data-family="gourmand" data-perfume-id="casamorati-italica" id="fiche-casamorati-italica">
+            <div class="collection-photo photo-casamorati-italica" role="img" aria-label="Ma photographie du flacon rouge bordeaux Casamorati Italica de Xerjoff, bouchon doré et pompon blanc"></div>
+            <div class="collection-copy">
+              <span class="collection-tag">Xerjoff · Casamorati</span>
+              <h3>Italica</h3>
+              <p class="collection-primary"><span class="collection-lang-fr">Gourmand oriental lacté dominant</span><span class="collection-lang-en">Main family: oriental creamy gourmand</span></p>
+              <span class="collection-tag"><span class="collection-lang-fr">Amande · lait · safran · toffee · vanille · santal</span><span class="collection-lang-en">Almond · milk · saffron · toffee · vanilla · sandalwood</span></span>
+              <p><span class="collection-lang-fr">Une gourmandise inspirée de la pâte d’amande italienne : amande, notes lactées et safran en ouverture, suivis d’un caramel toffee vanillé, puis d’un fond tendre de musc blanc, cèdre et santal. Classée uniquement parmi les Gourmands ; les bois et les épices restent secondaires. Description issue de la maison Xerjoff, sans impression personnelle inventée.</span><span class="collection-lang-en">An Italian almond-paste-inspired gourmand: almond, milky notes and saffron open the scent, followed by vanilla toffee, then a soft base of white musk, cedar and sandalwood. Filed only under Gourmand; woods and spice are secondary. From Xerjoff’s official notes, without invented personal impressions.</span></p>
+              <details>
+                <summary><span class="collection-lang-fr">Notes de tête, de cœur et de fond</span><span class="collection-lang-en">Top, heart and base notes</span></summary>
+                <p><strong><span class="collection-lang-fr">Tête</span><span class="collection-lang-en">Top</span> :</strong> <span class="collection-lang-fr">Amande, notes lactées, safran</span><span class="collection-lang-en">Almond, milky notes, saffron</span></p>
+                <p><strong><span class="collection-lang-fr">Cœur</span><span class="collection-lang-en">Heart</span> :</strong> <span class="collection-lang-fr">Toffee, vanille</span><span class="collection-lang-en">Toffee, vanilla</span></p>
+                <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Musc blanc, cèdre, bois de santal</span><span class="collection-lang-en">White musk, cedarwood, sandalwood</span></p>
+                <a href="https://www.xerjoff.com/en-uk/products/italica-au-de-parfum" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Voir la fiche officielle Xerjoff ↗</span><span class="collection-lang-en">See official Xerjoff fragrance notes ↗</span></a>
+              </details>
+              <details class="collection-journal" data-feature="titia-notes-layering">
+                <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
+                <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
+                <p><span class="collection-lang-fr">Je n’ai pas encore communiqué mon ressenti précis sur Italica. Mon véritable avis sera ajouté après mon retour d’essai.</span><span class="collection-lang-en">I have not yet shared detailed personal impressions of Italica. My real review will be added after I test it.</span></p>
+                <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                  <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                  <p><span class="collection-lang-fr">Très forte compatibilité : lait d’amande, caramel, vanille et musc réunissent mon amour des parfums sucrés, poudrés et enveloppants. Le côté crémeux devrait me plaire, mais il faut tester le sillage pour savoir s’il est assez opulent pour moi.</span><span class="collection-lang-en">Very strong match: almond milk, caramel, vanilla and musk fit my love of sweet, powdery, enveloping fragrances. The creamy character may appeal to me, but projection must be tested to know whether it feels opulent enough.</span></p>
+                  <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation de compatibilité, non un avis après essai.</span><span class="collection-lang-en">Predicted compatibility, not a personal wear review.</span></p>
+                </div>
+                <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
+                <ul>
+                  <li><strong>Italica + Voux Zeste</strong> — <span class="collection-lang-fr">Amande lactée, caramel et vanille avec des agrumes vifs : une piste façon gâteau citron-amande.</span><span class="collection-lang-en">Creamy almond, caramel and vanilla with vibrant citrus: a lemon-almond cake idea.</span></li>
+                  <li><strong>Italica + Aoud Purple Rose</strong> — <span class="collection-lang-fr">La gourmandise poudrée d’Italica rencontrerait une rose épicée, l’oud et le cuir pour un accord oriental intense.</span><span class="collection-lang-en">Italica’s powdery gourmand notes could meet spicy rose, oud and leather for a rich oriental accord.</span></li>
+                </ul>
+                <p class="collection-journal-tip"><span class="collection-lang-fr">Tester de petites quantités sur des zones séparées, sans promesse de tenue ou de sillage.</span><span class="collection-lang-en">Try small amounts on separate areas; longevity and projection are not guaranteed.</span></p>
+              </details>
+              <small class="collection-tag"><span class="collection-lang-fr">Photographie de ma collection</span><span class="collection-lang-en">Photo from my collection</span></small>
+            </div>
           </article>
 
           <article class="collection-item" data-family="floral" data-perfume-id="kasoof-white-extract" id="fiche-kasoof-white-extract">
@@ -883,6 +965,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Les fleurs blanches, la vanille poudrée et le musc rejoignent mon goût des notes poudrées ; probablement moins sombre qu’un oud ambré.</span><span class="collection-lang-en">White flowers, powdery vanilla and musk fit my powdery preferences; likely less dark than amber oud.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Kasoof White Extract + Bade’e Al Oud Amethyst</strong> — <span class="collection-lang-fr">Les fleurs blanches poudrées assoupliraient la rose et l’oud.</span><span class="collection-lang-en">Powdery white florals could soften rose and oud.</span></li>
@@ -913,6 +1000,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Violette, iris poudré et cuir évoquent un raffinement rétro, proche des notes anciennes que j’aime. Très prometteur sur le papier.</span><span class="collection-lang-en">Violet, powdery iris and leather evoke a vintage elegance I enjoy. Very promising on paper.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Attar Al Sheila + Mallow Madness</strong> — <span class="collection-lang-fr">Violette et iris poudrés face à la guimauve fruitée.</span><span class="collection-lang-en">Powdery violet and iris meet fruity marshmallow.</span></li>
@@ -943,6 +1035,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Rose de Damas, oud, patchouli et vanille rassemblent beaucoup de mes notes préférées : excellente compatibilité stylistique.</span><span class="collection-lang-en">Damask rose, oud, patchouli and vanilla unite many of my favourite notes: a strong stylistic fit.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Sehr Al Sheila + Voux Zeste</strong> — <span class="collection-lang-fr">Rose et oud face au caramel citronné pour un contraste original.</span><span class="collection-lang-en">Rose and oud meet lemon caramel in an unusual contrast.</span></li>
@@ -975,6 +1072,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Fleurs opulentes, oud et bois peuvent me plaire pour leur sophistication ; moins pâtissier que mes très gourmands.</span><span class="collection-lang-en">Opulent florals, oud and woods suit my taste for sophistication; less pastry-like than my sweetest gourmands.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Floral Sculpture + Ajayeb Dubai Portrait</strong> — <span class="collection-lang-fr">Framboise, fleur d’oranger et mangue sur un fond boisé.</span><span class="collection-lang-en">Raspberry, orange blossom and mango over woody notes.</span></li>
@@ -1003,6 +1105,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Roses et vanille correspondent à mon goût des floraux puissants et envoûtants. Aucune mesure personnelle de projection à ce stade.</span><span class="collection-lang-en">Roses and vanilla suit my taste for expressive florals. No personal projection assessment yet.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Atomic Rose + Scandal Intense</strong> — <span class="collection-lang-fr">Une rose expressive face à l’ylang-ylang épicé et vanillé.</span><span class="collection-lang-en">Expressive rose meets spicy vanilla ylang-ylang.</span></li>
@@ -1033,6 +1140,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Rose, safran, oud, cuir et ambre : une composition orientale profonde et presque ancienne, très proche de mon idéal.</span><span class="collection-lang-en">Rose, saffron, oud, leather and amber suggest a deep, almost vintage oriental close to my ideal.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Aoud Purple Rose + Choco Overdose</strong> — <span class="collection-lang-fr">La rose épicée et l’oud donnent de la profondeur au chocolat noir.</span><span class="collection-lang-en">Spicy rose and oud give depth to dark chocolate.</span></li>
@@ -1062,6 +1174,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Sa vanille et ses fleurs poudrées me correspondent, mais je pourrais la trouver trop sage pour une envie de parfum écrasant.</span><span class="collection-lang-en">Vanilla and powdery flowers appeal to me, but it may feel too gentle when I want something overwhelming.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Yara + Bade’e Al Oud Amethyst</strong> — <span class="collection-lang-fr">Une douceur vanillée et florale sur une rose-oud plus intense.</span><span class="collection-lang-en">Soft vanilla florals over more intense rose-oud.</span></li>
@@ -1091,6 +1208,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Les fruits rouges et le musc sont intéressants, surtout pour enrichir un accord ; seul, son profil pourrait manquer de profondeur.</span><span class="collection-lang-en">Red berries and musk are appealing for layering, although the scent may lack depth on its own.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Now Women + Ajayeb Dubai Portrait</strong> — <span class="collection-lang-fr">Fruits rouges et mangue pour une facette tropicale très fruitée.</span><span class="collection-lang-en">Red berries and mango for a tropical fruity blend.</span></li>
@@ -1121,6 +1243,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Mangue, agrumes et oud réunissent ma passion des fruits et des orientaux riches. Très prometteur, sans garantie de projection.</span><span class="collection-lang-en">Mango, citrus and oud combine my love of fruit and rich orientals. Promising, with no projection guarantee.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Ajayeb Dubai Portrait + Shaghaf Oud</strong> — <span class="collection-lang-fr">La mangue apporte un éclat tropical au oud et à la rose.</span><span class="collection-lang-en">Mango adds a tropical twist to oud and rose.</span></li>
@@ -1151,6 +1278,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Figue noire, tubéreuse et santal offrent un chypré ambré charnel et généreux, très proche de ma recherche de sensualité.</span><span class="collection-lang-en">Black fig, tuberose and sandalwood create a generous amber chypre that fits my love of sensual richness.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Scandal Absolu + Arabians Tonka</strong> — <span class="collection-lang-fr">Figue et santal rejoignent la rose, l’oud et la tonka.</span><span class="collection-lang-en">Fig and sandalwood meet rose, oud and tonka.</span></li>
@@ -1181,6 +1313,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">La cardamome, l’ylang-ylang et la vanille créent un profil épicé, floral et chaud très adapté à mon univers.</span><span class="collection-lang-en">Cardamom, ylang-ylang and vanilla make a spicy, warm floral profile well suited to my preferences.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Scandal Intense + Choco Overdose</strong> — <span class="collection-lang-fr">Cardamome et vanille apportent des épices au chocolat noir.</span><span class="collection-lang-en">Cardamom and vanilla spice up dark chocolate.</span></li>
@@ -1211,6 +1348,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Rose, oud, ambre et vanille sont presque un concentré de mes notes favorites ; tenue et puissance à confirmer.</span><span class="collection-lang-en">Rose, oud, amber and vanilla bring together many favourite notes; actual strength needs testing.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Bade’e Al Oud Amethyst + Mallow Madness</strong> — <span class="collection-lang-fr">La guimauve fruitée adoucit la rose ambrée et l’oud.</span><span class="collection-lang-en">Fruity marshmallow softens amber rose and oud.</span></li>
@@ -1235,6 +1377,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">J’aime sa richesse, mais seul, je le trouve moins puissant que je ne l’espérais.</span><span class="collection-lang-en">I love its richness, but on its own it feels less powerful than I had hoped.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Rose, oud et tonka sont dans mes goûts, mais je l’ai déjà trouvé insuffisamment puissant porté seul. Je le préfère associé.</span><span class="collection-lang-en">Rose, oud and tonka fit my taste, but I have already found it insufficiently powerful alone. I prefer layering it.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Arabians Tonka + Atomic Rose</strong> — <span class="collection-lang-fr">La rose d’Atomic Rose amplifie le cœur rosé et ambré.</span><span class="collection-lang-en">Atomic Rose could deepen the rosy amber heart.</span></li>
@@ -1259,6 +1406,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">J’aime l’associer à d’autres parfums. Porté seul, sa projection reste inférieure à mes attentes.</span><span class="collection-lang-en">I like layering it. Worn alone, its projection falls short of what I want.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">J’aime le tabac épicé et ambré, mais sa projection seule m’a déçue malgré sa réputation. Les associations sont intéressantes.</span><span class="collection-lang-en">I enjoy its spicy amber tobacco, but its projection alone disappointed me despite its reputation. Layering is interesting.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Intense Red Tobacco + Victoria</strong> — <span class="collection-lang-fr">Le citron meringué pourrait éclairer le tabac épicé.</span><span class="collection-lang-en">Lemon meringue could brighten spicy tobacco.</span></li>
@@ -1283,6 +1435,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">Je l’ai utilisé sur les vêtements, associé à Arabians Tonka sur les bras et Intense Red Tobacco au cou : j’ai trouvé le mélange très agréable et sa tenue bonne.</span><span class="collection-lang-en">I wore it on my clothes with Arabians Tonka on my arms and Intense Red Tobacco on my neck: the blend felt very pleasant and lasted well.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">J’ai aimé son association sur les vêtements avec Arabians Tonka aux bras et Intense Red Tobacco au cou : très agréable, bonne tenue du mélange.</span><span class="collection-lang-en">I liked wearing it on clothes with Arabians Tonka on my arms and Intense Red Tobacco on my neck: pleasant and long-lasting as a blend.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Lueur d’Espoir Arena Intense + Kasoof White Extract</strong> — <span class="collection-lang-fr">Les fleurs blanches allègeraient les notes ambrées et boisées.</span><span class="collection-lang-en">White flowers could lift amber and woody notes.</span></li>
@@ -1307,6 +1464,11 @@
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">J’apprécie le caractère opulent de ce parfum. Je n’ai pas encore communiqué une mesure précise de sa tenue ou de son sillage.</span><span class="collection-lang-en">I appreciate this fragrance’s opulent character. I have not yet given a specific assessment of its longevity or projection.</span></p>
+              <div class="collection-profile-fit" data-feature="titia-profile-fit-v1">
+                <p class="collection-journal-label"><span class="collection-lang-fr">Selon mes goûts — avis prévisionnel</span><span class="collection-lang-en">Based on my tastes — predicted fit</span></p>
+                <p><span class="collection-lang-fr">Rose, oud et gourmandise correspondent à mon goût des parfums opulents ; je l’apprécie, sans mesure précise de son sillage.</span><span class="collection-lang-en">Rose, oud and gourmand notes fit my love of opulent scents; I like it but have not measured its projection.</span></p>
+                <p class="collection-profile-caveat"><span class="collection-lang-fr">Estimation fondée sur les notes et mes préférences, pas un nouvel essai réel.</span><span class="collection-lang-en">Based on fragrance notes and my preferences, not a new personal wear test.</span></p>
+              </div>
               <p class="collection-journal-label"><span class="collection-lang-fr">Deux associations à essayer · non testées</span><span class="collection-lang-en">Two suggested pairings · not yet tested</span></p>
               <ul>
                 <li><strong>Shaghaf Oud + Yara Candy</strong> — <span class="collection-lang-fr">Fruits sucrés, rose, oud et praliné pour un oriental gourmand.</span><span class="collection-lang-en">Sweet fruits, rose, oud and praline for an oriental gourmand.</span></li>
