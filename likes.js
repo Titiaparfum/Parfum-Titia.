@@ -13,14 +13,19 @@
       node.textContent = status === "ok" ? new Intl.NumberFormat(english ? "en" : "fr").format(count) : "—";
     });
     statuses.forEach(function (node) {
-      if (status === "ok") {
-        node.textContent = english
-          ? (count === 1 ? "1 verified 👍 reaction on GitHub." : "Verified 👍 reactions on GitHub.")
-          : (count === 1 ? "1 réaction 👍 vérifiée sur GitHub." : "Réactions 👍 vérifiées sur GitHub.");
-      } else if (status === "error") {
-        node.textContent = english
-          ? "Count temporarily unavailable. Open GitHub to see the latest 👍 reactions."
-          : "Compteur momentanément indisponible. Consultez GitHub pour les 👍 actuels.";
+      var frNode = node.querySelector("[data-like-fr]");
+      var enNode = node.querySelector("[data-like-en]");
+      var frText = status === "ok"
+        ? "Pouces 👍 vérifiés sur GitHub, et non visites du site."
+        : "Compteur indisponible pour le moment. Consultez GitHub pour les 👍 actuels.";
+      var enText = status === "ok"
+        ? "Verified GitHub 👍 reactions, not page views."
+        : "Count temporarily unavailable. Check GitHub for current 👍 reactions.";
+      if (frNode && enNode) {
+        frNode.textContent = frText;
+        enNode.textContent = enText;
+      } else {
+        node.textContent = english ? enText : frText;
       }
     });
   }
