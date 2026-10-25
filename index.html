@@ -368,6 +368,19 @@
     .collection-profile-fit p{font-size:.81rem;line-height:1.6}
     .collection-profile-fit .collection-profile-caveat{font-size:.72rem;color:var(--muted);font-style:italic}
 
+  
+    /* Comparatif éditorial : trois gourmandises, liens vers les fiches existantes. */
+    .gourmand-compare{margin:19px 0 25px;padding:0;border:1px solid var(--line);border-radius:16px;background:#fffdf9;overflow:hidden}
+    .gourmand-compare>summary{cursor:pointer;padding:17px 20px;color:var(--wine-deep);font-weight:750;line-height:1.5}
+    .gourmand-compare[open]>summary{border-bottom:1px solid var(--line)}
+    .gourmand-compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px}
+    .gourmand-compare-card{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:15px;min-width:0}
+    .gourmand-compare-card h3{font:400 1.25rem/1.25 Georgia,serif;margin:0 0 8px;color:var(--ink)}
+    .gourmand-compare-card p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:0 0 11px}
+    .gourmand-compare-card a{color:var(--wine);font-weight:750;text-decoration:underline;text-underline-offset:3px;font-size:.83rem}
+    .gourmand-compare-foot{font-size:.75rem;color:var(--muted);line-height:1.55;margin:0;padding:0 16px 16px}
+    @media(max-width:760px){.gourmand-compare-grid{grid-template-columns:1fr}.gourmand-compare>summary{padding:15px}}
+
   </style>
 </head>
 <body>
@@ -633,6 +646,32 @@
           <p><span class="collection-lang-fr">Mon univers : des parfums opulents, expressifs, avec un sillage qui se remarque et une tenue prolongée. Je distingue mes ressentis réellement partagés des idées à tester. Sur chaque fiche, deux combinaisons sont proposées à partir de ma collection ; je les enrichirai au fur et à mesure de mes découvertes.</span><span class="collection-lang-en">My taste: opulent and expressive fragrances with noticeable projection and lasting power. I distinguish my actual impressions from suggestions I have not yet tested. Each fragrance has two combinations selected from my collection, to be expanded as I discover more.</span></p>
         </div>
         <p><a class="collection-feature-link" href="#accords-rares"><span class="collection-lang-fr">Découvrir mes associations et effluves rares ↓</span><span class="collection-lang-en">Discover creative fragrance pairings ↓</span></a></p>
+
+        <details class="gourmand-compare" id="compare-gourmands">
+          <summary><span class="collection-lang-fr">À la loupe : Vanilla Freak, Mallow Madness ou Choco Overdose ? Comparer leurs caractères</span><span class="collection-lang-en">Closer look: Vanilla Freak, Mallow Madness or Choco Overdose? Compare their profiles</span></summary>
+          <div class="gourmand-compare-grid">
+            <article class="gourmand-compare-card">
+              <h3>Vanilla Freak</h3>
+              <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">vanille pâtissière, cupcake, amande et glaçage.</span><span class="collection-lang-en">pastry vanilla, cupcake, almond and frosting.</span></p>
+              <p><span class="collection-lang-fr">C'est le profil le plus « gâteau à la vanille » du trio. Il correspond à mon goût du sucre et des parfums crémeux ; sa puissance réelle reste à vérifier.</span><span class="collection-lang-en">The most vanilla-cake-like profile of the three. It suits my love of creamy sweetness, but its actual strength remains untested.</span></p>
+              <a href="#fiche-vanilla-freak"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
+            </article>
+            <article class="gourmand-compare-card">
+              <h3>Mallow Madness</h3>
+              <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">fraise, framboise, guimauve et crème.</span><span class="collection-lang-en">strawberry, raspberry, marshmallow and cream.</span></p>
+              <p><span class="collection-lang-fr">Le plus fruité et guimauve du trio. Il correspond à mon goût des gourmandises sucrées, mais pourrait demander un accord boisé pour davantage de profondeur.</span><span class="collection-lang-en">The fruitiest marshmallow profile of the three. It fits my sweet tastes, though a woody pairing could add depth.</span></p>
+              <a href="#fiche-mallow-madness"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
+            </article>
+            <article class="gourmand-compare-card">
+              <h3>Choco Overdose</h3>
+              <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">chocolat noir, cacao, caramel et vanille.</span><span class="collection-lang-en">dark chocolate, cocoa, caramel and vanilla.</span></p>
+              <p><span class="collection-lang-fr">Le plus chocolaté du trio, avec une impression de dessert dense. Très proche de mon goût des accords opulents, sans preuve à ce stade d'un sillage plus puissant.</span><span class="collection-lang-en">The most chocolate-led profile, evoking a rich dessert. Very close to my taste for opulent blends, without evidence of stronger projection.</span></p>
+              <a href="#fiche-choco-overdose"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
+            </article>
+          </div>
+          <p class="gourmand-compare-foot"><span class="collection-lang-fr">Comparaison des accords, non classement de puissance : sillage et tenue restent à évaluer à l'usage. Mes ressentis réels et les associations suggérées figurent dans les fiches individuelles.</span><span class="collection-lang-en">A comparison of scent profiles, not a performance ranking: projection and longevity still require testing. Real impressions and suggested pairings remain in the individual entries.</span></p>
+        </details>
+
         <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
           <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
           <button type="button" class="collection-filter" data-family="gourmand" aria-pressed="false"><span class="collection-lang-fr">Gourmands & vanillés</span><span class="collection-lang-en">Gourmand & vanilla</span></button>
