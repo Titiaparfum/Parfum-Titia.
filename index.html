@@ -370,16 +370,16 @@
 
   
     /* Comparatif éditorial : trois gourmandises, liens vers les fiches existantes. */
-    .gourmand-compare{margin:19px 0 25px;padding:0;border:1px solid var(--line);border-radius:16px;background:#fffdf9;overflow:hidden}
-    .gourmand-compare>summary{cursor:pointer;padding:17px 20px;color:var(--wine-deep);font-weight:750;line-height:1.5}
-    .gourmand-compare[open]>summary{border-bottom:1px solid var(--line)}
-    .gourmand-compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px}
-    .gourmand-compare-card{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:15px;min-width:0}
-    .gourmand-compare-card h3{font:400 1.25rem/1.25 Georgia,serif;margin:0 0 8px;color:var(--ink)}
-    .gourmand-compare-card p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:0 0 11px}
-    .gourmand-compare-card a{color:var(--wine);font-weight:750;text-decoration:underline;text-underline-offset:3px;font-size:.83rem}
-    .gourmand-compare-foot{font-size:.75rem;color:var(--muted);line-height:1.55;margin:0;padding:0 16px 16px}
-    @media(max-width:760px){.gourmand-compare-grid{grid-template-columns:1fr}.gourmand-compare>summary{padding:15px}}
+    .fragrance-compare{margin:19px 0 25px;padding:0;border:1px solid var(--line);border-radius:16px;background:#fffdf9;overflow:hidden}
+    .fragrance-compare>summary{cursor:pointer;padding:17px 20px;color:var(--wine-deep);font-weight:750;line-height:1.5}
+    .fragrance-compare[open]>summary{border-bottom:1px solid var(--line)}
+    .fragrance-compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px}
+    .fragrance-compare-card{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:15px;min-width:0}
+    .fragrance-compare-card h3{font:400 1.25rem/1.25 Georgia,serif;margin:0 0 8px;color:var(--ink)}
+    .fragrance-compare-card p{font-size:.83rem;line-height:1.65;color:var(--muted);margin:0 0 11px}
+    .fragrance-compare-card a{color:var(--wine);font-weight:750;text-decoration:underline;text-underline-offset:3px;font-size:.83rem}
+    .fragrance-compare-foot{font-size:.75rem;color:var(--muted);line-height:1.55;margin:0;padding:0 16px 16px}
+    @media(max-width:760px){.fragrance-compare-grid{grid-template-columns:1fr}.fragrance-compare>summary{padding:15px}}
 
   
     /* Guides d'observation, sans affirmations de performance non testées. */
@@ -653,31 +653,97 @@
         </div>
         <p><a class="collection-feature-link" href="#accords-rares"><span class="collection-lang-fr">Découvrir mes associations et effluves rares ↓</span><span class="collection-lang-en">Discover creative fragrance pairings ↓</span></a></p>
 
-        <details class="gourmand-compare" id="compare-gourmands">
+        <details class="fragrance-compare" id="compare-gourmands">
           <summary><span class="collection-lang-fr">À la loupe : Vanilla Freak, Mallow Madness ou Choco Overdose ? Comparer leurs caractères</span><span class="collection-lang-en">Closer look: Vanilla Freak, Mallow Madness or Choco Overdose? Compare their profiles</span></summary>
-          <div class="gourmand-compare-grid">
-            <article class="gourmand-compare-card">
+          <div class="fragrance-compare-grid">
+            <article class="fragrance-compare-card">
               <h3>Vanilla Freak</h3>
               <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">vanille pâtissière, cupcake, amande et glaçage.</span><span class="collection-lang-en">pastry vanilla, cupcake, almond and frosting.</span></p>
               <p><span class="collection-lang-fr">C'est le profil le plus « gâteau à la vanille » du trio. Il correspond à mon goût du sucre et des parfums crémeux ; sa puissance réelle reste à vérifier.</span><span class="collection-lang-en">The most vanilla-cake-like profile of the three. It suits my love of creamy sweetness, but its actual strength remains untested.</span></p>
               <a href="#fiche-vanilla-freak"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
             </article>
-            <article class="gourmand-compare-card">
+            <article class="fragrance-compare-card">
               <h3>Mallow Madness</h3>
               <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">fraise, framboise, guimauve et crème.</span><span class="collection-lang-en">strawberry, raspberry, marshmallow and cream.</span></p>
               <p><span class="collection-lang-fr">Le plus fruité et guimauve du trio. Il correspond à mon goût des gourmandises sucrées, mais pourrait demander un accord boisé pour davantage de profondeur.</span><span class="collection-lang-en">The fruitiest marshmallow profile of the three. It fits my sweet tastes, though a woody pairing could add depth.</span></p>
               <a href="#fiche-mallow-madness"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
             </article>
-            <article class="gourmand-compare-card">
+            <article class="fragrance-compare-card">
               <h3>Choco Overdose</h3>
               <p><strong><span class="collection-lang-fr">Dominante</span><span class="collection-lang-en">Main accord</span> :</strong> <span class="collection-lang-fr">chocolat noir, cacao, caramel et vanille.</span><span class="collection-lang-en">dark chocolate, cocoa, caramel and vanilla.</span></p>
               <p><span class="collection-lang-fr">Le plus chocolaté du trio, avec une impression de dessert dense. Très proche de mon goût des accords opulents, sans preuve à ce stade d'un sillage plus puissant.</span><span class="collection-lang-en">The most chocolate-led profile, evoking a rich dessert. Very close to my taste for opulent blends, without evidence of stronger projection.</span></p>
               <a href="#fiche-choco-overdose"><span class="collection-lang-fr">Voir sa fiche détaillée</span><span class="collection-lang-en">Open full fragrance details</span></a>
             </article>
           </div>
-          <p class="gourmand-compare-foot"><span class="collection-lang-fr">Comparaison des accords, non classement de puissance : sillage et tenue restent à évaluer à l'usage. Mes ressentis réels et les associations suggérées figurent dans les fiches individuelles.</span><span class="collection-lang-en">A comparison of scent profiles, not a performance ranking: projection and longevity still require testing. Real impressions and suggested pairings remain in the individual entries.</span></p>
+          <p class="fragrance-compare-foot"><span class="collection-lang-fr">Comparaison des accords, non classement de puissance : sillage et tenue restent à évaluer à l'usage. Mes ressentis réels et les associations suggérées figurent dans les fiches individuelles.</span><span class="collection-lang-en">A comparison of scent profiles, not a performance ranking: projection and longevity still require testing. Real impressions and suggested pairings remain in the individual entries.</span></p>
         </details>
 
+
+        <details class="fragrance-compare" id="compare-ambres">
+          <summary><span class="collection-lang-fr">Ambrés : trois façons d’obtenir une impression chaleureuse</span><span class="collection-lang-en">Amber scents: three ways to explore warmth</span></summary>
+          <div class="fragrance-compare-grid">
+            <article class="fragrance-compare-card">
+              <h3>Art of Arabia III</h3>
+              <p><span class="collection-lang-fr">Encens, dattes, tabac, myrrhe et vanille : un registre résineux et oriental. Selon mes goûts, ses facettes sombres et sucrées sont particulièrement intéressantes.</span><span class="collection-lang-en">Frankincense, dates, tobacco, myrrh and vanilla: a resinous oriental profile. Its dark, sweet facets seem especially promising for my tastes.</span></p>
+              <a href="#lattafa-art-of-arabia-iii"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Ameer Al Oudh Intense Oud</h3>
+              <p><span class="collection-lang-fr">Oud, notes boisées, safran et vanille : une construction chaleureuse, boisée et cuirée. À explorer pour son contraste entre épices et fond enveloppant.</span><span class="collection-lang-en">Oud, woods, saffron and vanilla: a warm, woody, leathery structure. Worth exploring for its spicy opening and enveloping dry-down.</span></p>
+              <a href="#lattafa-ameer-al-oudh-intense-oud"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Scandal Intense</h3>
+              <p><span class="collection-lang-fr">Cardamome, ylang-ylang et vanille : une voie plus florale, épicée et crémeuse. Son caractère opulent et son sillage sont à confirmer sur peau.</span><span class="collection-lang-en">Cardamom, ylang-ylang and vanilla: a more floral, spicy and creamy direction. Its opulence and projection require a wear test.</span></p>
+              <a href="#scandal-intense"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+          </div>
+          <p class="fragrance-compare-foot"><span class="collection-lang-fr">Ces comparaisons décrivent les accords et mes préférences. Elles ne constituent pas un classement de sillage, de tenue ou d’intensité vérifiée.</span><span class="collection-lang-en">These comparisons describe scent accords and my preferences; they are not a verified ranking of projection, longevity or strength.</span></p>
+        </details>
+
+        <details class="fragrance-compare" id="compare-boises">
+          <summary><span class="collection-lang-fr">Boisés, oud et tabac : profondeur et caractère</span><span class="collection-lang-en">Woody scents, oud and tobacco: depth and character</span></summary>
+          <div class="fragrance-compare-grid">
+            <article class="fragrance-compare-card">
+              <h3>La Collection d’Antiquités 1505</h3>
+              <p><span class="collection-lang-fr">Cerise noire, safran, encens et bois fumés : le profil le plus sombre et résineux de cette sélection. Il pourrait répondre à mon goût des accords anciens.</span><span class="collection-lang-en">Black cherry, saffron, incense and smoky woods: the darkest, most resinous profile in this selection. It may suit my taste for vintage-feeling accords.</span></p>
+              <a href="#antiquites-1505"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Intense Red Tobacco</h3>
+              <p><span class="collection-lang-fr">Tabac épicé, cuir et fond vanillé. Je l’ai déjà essayé : malgré sa richesse, sa projection portée seule reste en dessous de mes attentes.</span><span class="collection-lang-en">Spicy tobacco, leather and a vanilla base. I have worn it: despite its richness, its projection alone falls short of my expectations.</span></p>
+              <a href="#fiche-intense-red-tobacco"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Shaghaf Oud</h3>
+              <p><span class="collection-lang-fr">Oud, safran, rose et praliné : un boisé plus gourmand. Je l’apprécie, mais je n’ai pas communiqué de mesure précise de sa tenue ou de son sillage.</span><span class="collection-lang-en">Oud, saffron, rose and praline: a more gourmand woody scent. I enjoy it, but have not reported precise longevity or projection measurements.</span></p>
+              <a href="#fiche-shaghaf-oud"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+          </div>
+          <p class="fragrance-compare-foot"><span class="collection-lang-fr">Ces comparaisons décrivent les accords et mes préférences. Elles ne constituent pas un classement de sillage, de tenue ou d’intensité vérifiée.</span><span class="collection-lang-en">These comparisons describe scent accords and my preferences; they are not a verified ranking of projection, longevity or strength.</span></p>
+        </details>
+
+        <details class="fragrance-compare" id="compare-floraux">
+          <summary><span class="collection-lang-fr">Floraux : de la poudre délicate aux roses orientales</span><span class="collection-lang-en">Floral scents: from delicate powder to oriental roses</span></summary>
+          <div class="fragrance-compare-grid">
+            <article class="fragrance-compare-card">
+              <h3>Iris Prima</h3>
+              <p><span class="collection-lang-fr">Iris poudré, jasmin, cuir et santal : une élégance plus feutrée que mes orientaux très sucrés. Sa facette poudrée est intéressante pour moi.</span><span class="collection-lang-en">Powdery iris, jasmine, leather and sandalwood: more understated than my very sweet orientals. Its powdery character is appealing to me.</span></p>
+              <a href="#penhaligons-iris-prima"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Atomic Rose</h3>
+              <p><span class="collection-lang-fr">Roses turque et bulgare, jasmin et vanille : un bouquet centré sur la rose. Sa puissance réelle n’a pas encore été évaluée par mes soins.</span><span class="collection-lang-en">Turkish and Bulgarian roses, jasmine and vanilla: a rose-led bouquet. I have not yet assessed its actual strength through wear.</span></p>
+              <a href="#atomic-rose"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+            <article class="fragrance-compare-card">
+              <h3>Aoud Purple Rose</h3>
+              <p><span class="collection-lang-fr">Rose, safran, oud, cuir et ambre : le plus boisé-oriental de ce trio floral. Son architecture correspond à mon goût pour les roses profondes.</span><span class="collection-lang-en">Rose, saffron, oud, leather and amber: the most woody-oriental of these three florals. Its structure matches my taste for deep roses.</span></p>
+              <a href="#aoud-purple-rose"><span class="collection-lang-fr">Consulter la fiche et les associations</span><span class="collection-lang-en">Read notes and pairing suggestions</span></a>
+            </article>
+          </div>
+          <p class="fragrance-compare-foot"><span class="collection-lang-fr">Ces comparaisons décrivent les accords et mes préférences. Elles ne constituent pas un classement de sillage, de tenue ou d’intensité vérifiée.</span><span class="collection-lang-en">These comparisons describe scent accords and my preferences; they are not a verified ranking of projection, longevity or strength.</span></p>
+        </details>
         <div class="collection-filters" role="group" aria-label="Filtrer ma collection par familles olfactives">
           <button type="button" class="collection-filter" data-family="tous" aria-pressed="true"><span class="collection-lang-fr">Tout voir</span><span class="collection-lang-en">All</span></button>
           <button type="button" class="collection-filter" data-family="gourmand" aria-pressed="false"><span class="collection-lang-fr">Gourmands & vanillés</span><span class="collection-lang-en">Gourmand & vanilla</span></button>
@@ -1076,6 +1142,11 @@
                 <a href="https://www.penhaligons.com/us/en/p/iris-prima-50ml--000000000065120995" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Présentation Penhaligon’s ↗</span><span class="collection-lang-en">Penhaligon’s product description ↗</span></a>
                 <a href="https://basenotes.com/articles/iris-prima-the-spirit-of-the-ballet-bottled.1755/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Pyramide et histoire du lancement (2013) ↗</span><span class="collection-lang-en">Original launch notes and history (2013) ↗</span></a>
               </details>
+              <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Chercher le passage de la bergamote et du poivre rose vers l’iris poudré, puis l’accord cuir-santal. Vérifier si la douceur reste aérienne ou devient plus enveloppante.</span><span class="collection-lang-en">Track bergamot and pink pepper toward powdery iris and then leather-sandalwood. See whether the fragrance stays airy or becomes more enveloping.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
               <details class="collection-journal" data-feature="titia-notes-layering">
                 <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
                 <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
@@ -1288,7 +1359,12 @@
               </details>
               <small class="collection-tag"><span class="collection-lang-fr">Photographie de ma collection</span><span class="collection-lang-en">Photo from my collection</span></small>
             
-            <details class="collection-journal" data-feature="titia-notes-layering">
+            <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Observer comment les différentes facettes de la rose évoluent avec le jasmin et la vanille. Noter la projection sans déduire sa puissance du nom du parfum.</span><span class="collection-lang-en">See how the rose facets evolve alongside jasmine and vanilla. Record projection without assuming strength from the fragrance name.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
+              <details class="collection-journal" data-feature="titia-notes-layering">
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
@@ -1323,7 +1399,12 @@
               </details>
               <small class="collection-tag"><span class="collection-lang-fr">Photographie de ma collection</span><span class="collection-lang-en">Photo from my collection</span></small>
             
-            <details class="collection-journal" data-feature="titia-notes-layering">
+            <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Comparer les pétales de rose safranés au cœur de bois d’oud et au fond cuiré, ambré et musqué. Noter si le côté oriental est suffisamment affirmé pour mes goûts.</span><span class="collection-lang-en">Compare saffron rose petals with the oud heart and leathery amber-musk base. Note whether its oriental character feels pronounced enough for my tastes.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
+              <details class="collection-journal" data-feature="titia-notes-layering">
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
@@ -1641,6 +1722,11 @@
                 <p><span class="collection-lang-fr">La même fiche et Lattafa USA présentent aussi : tête oud et notes boisées, cœur sucre et vanille, fond oud, santal et notes aromatiques. Les deux présentations officielles ne sont pas identiques.</span><span class="collection-lang-en">The same international page and Lattafa USA also present: top oud and woody notes, heart sugar and vanilla, base oud, sandalwood and herbal notes. These two official presentations are not identical.</span></p>
                 <a href="https://www.lattafa-usa.com/products/ameer-al-oud-intense" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Fiche Lattafa USA ↗</span><span class="collection-lang-en">Lattafa USA source ↗</span></a>
               </details>
+              <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Comparer l’ouverture safranée et épicée au fond oud-vanille-cuir. Noter si le parfum paraît surtout boisé, fumé ou sucré après deux heures.</span><span class="collection-lang-en">Compare the saffron-spice opening with its oud, vanilla and leather base. Note whether it feels mainly woody, smoky or sweet after two hours.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
               <details class="collection-journal" data-feature="titia-notes-layering">
                 <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
                 <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
@@ -1714,6 +1800,11 @@
                 <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Myrrhe, vanille, fève tonka, labdanum, patchouli</span><span class="collection-lang-en">Myrrh, vanilla, tonka bean, labdanum, patchouli</span></p>
                 <a href="https://www.lattafa-usa.com/products/art-of-arabia-iii" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Voir la pyramide officielle Lattafa ↗</span><span class="collection-lang-en">See official Lattafa fragrance notes ↗</span></a>
               </details>
+              <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Lors du test, observer si l’encens domine dès l’ouverture, puis si les dattes et le tabac donnent une douceur plus sombre. Suivre la myrrhe, le labdanum et la vanille dans le fond.</span><span class="collection-lang-en">During testing, see whether incense dominates the opening and whether dates and tobacco add a darker sweetness. Follow myrrh, labdanum and vanilla in the dry-down.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
               <details class="collection-journal" data-feature="titia-notes-layering">
                 <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
                 <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
@@ -1785,7 +1876,12 @@
               </details>
               <small class="collection-tag"><span class="collection-lang-fr">Photographie de ma collection</span><span class="collection-lang-en">Photo from my collection</span></small>
             
-            <details class="collection-journal" data-feature="titia-notes-layering">
+            <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Observer la transition de la cardamome vers l’ylang-ylang, puis la place de la vanille. Distinguer la douceur perçue de la projection réelle.</span><span class="collection-lang-en">Follow the transition from cardamom to ylang-ylang and then the role of vanilla. Distinguish perceived sweetness from actual projection.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
+              <details class="collection-journal" data-feature="titia-notes-layering">
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
               <p><span class="collection-lang-fr">Je n’ai pas encore donné mon avis personnel sur ce parfum. À compléter après mon essai.</span><span class="collection-lang-en">I have not yet shared my personal opinion of this fragrance. To be added after testing.</span></p>
@@ -1885,6 +1981,11 @@
                 <p><strong><span class="collection-lang-fr">Fond</span><span class="collection-lang-en">Base</span> :</strong> <span class="collection-lang-fr">Baume, styrax, cypriol, bois de gaïac</span><span class="collection-lang-en">Balsam, styrax, cypriol, guaiac wood</span></p>
                 <a href="https://lattafa.com/product/la-collection-d-antiquites-1505/" target="_blank" rel="noopener noreferrer"><span class="collection-lang-fr">Voir la composition officielle Lattafa ↗</span><span class="collection-lang-en">See official Lattafa fragrance notes ↗</span></a>
               </details>
+              <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Repérer si la cerise noire reste perceptible ou cède la place à l’encens, au styrax et aux bois. Comparer l’effet résineux et fumé à celui des parfums plus gourmands.</span><span class="collection-lang-en">Check whether black cherry remains noticeable or gives way to incense, styrax and woods. Compare its smoky, resinous quality with sweeter gourmand scents.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
               <details class="collection-journal" data-feature="titia-notes-layering">
                 <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
                 <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti personnel à venir</span><span class="collection-lang-en">Personal review coming later</span></p>
@@ -1915,7 +2016,12 @@
               <p><span class="collection-lang-fr">Tabac épicé et cuir sur un fond ambré et vanillé.</span><span class="collection-lang-en">Spiced tobacco and leather with amber and vanilla.</span></p>
               <a class="collection-feature-link" href="#fiche-intense-red-tobacco"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             
-            <details class="collection-journal" data-feature="titia-notes-layering">
+            <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Puisque sa projection seule m’a déçue, vérifier à distance modérée, avec une personne consentante, l’évolution du tabac et des épices sans multiplier les pulvérisations.</span><span class="collection-lang-en">Since its solo projection disappointed me, check its tobacco-spice trail at a moderate distance with a willing observer, without increasing sprays excessively.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
+              <details class="collection-journal" data-feature="titia-notes-layering">
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">J’aime l’associer à d’autres parfums. Porté seul, sa projection reste inférieure à mes attentes.</span><span class="collection-lang-en">I like layering it. Worn alone, its projection falls short of what I want.</span></p>
@@ -1973,7 +2079,12 @@
               <p><span class="collection-lang-fr">Oud, safran, rose et praliné sur une base vanillée.</span><span class="collection-lang-en">Oud, saffron, rose and praline with a vanilla base.</span></p>
               <a class="collection-feature-link" href="#fiche-shaghaf-oud"><span class="collection-lang-fr">Voir les notes et mon avis →</span><span class="collection-lang-en">See the notes and my review →</span></a>
             
-            <details class="collection-journal" data-feature="titia-notes-layering">
+            <div class="collection-wear-guide" data-feature="wear-check-v2">
+                <strong><span class="collection-lang-fr">Points à observer lors d’un essai</span><span class="collection-lang-en">What to observe during a wear test</span></strong>
+                <p><span class="collection-lang-fr">Suivre la rose et le safran avant le cœur oud-praliné, puis observer si la vanille adoucit l’ensemble. La tenue et le sillage restent à noter séparément.</span><span class="collection-lang-en">Follow rose and saffron before the oud-praline heart, then see whether vanilla softens the blend. Record longevity and projection separately.</span></p>
+                <p><span class="collection-lang-fr">Noter l’évolution à 30 minutes, 2 heures et 6 heures, selon le parfum, sans conclure à une tenue ou une projection non testée.</span><span class="collection-lang-en">Check its development at 30 minutes, 2 hours and 6 hours, as appropriate, without claiming untested longevity or projection.</span></p>
+              </div>
+              <details class="collection-journal" data-feature="titia-notes-layering">
               <summary><span class="collection-lang-fr">Mon avis et mes associations</span><span class="collection-lang-en">My impressions &amp; layering ideas</span></summary>
               <p class="collection-journal-label"><span class="collection-lang-fr">Mon ressenti déjà partagé</span><span class="collection-lang-en">My previously shared impression</span></p>
               <p><span class="collection-lang-fr">J’apprécie le caractère opulent de ce parfum. Je n’ai pas encore communiqué une mesure précise de sa tenue ou de son sillage.</span><span class="collection-lang-en">I appreciate this fragrance’s opulent character. I have not yet given a specific assessment of its longevity or projection.</span></p>
