@@ -135,10 +135,10 @@
 
     /* Photo personnelle de quatre flacons : une seule image découpée en quatre vues.
        Les illustrations existantes restent visibles tant que le fichier photo n'est pas publié. */
-    .perfume-art.photo-ready{padding:0;background:var(--paper);min-height:240px}
+    .perfume-art.photo-ready{padding:12px;background:var(--paper);min-height:220px;align-self:start}
     .perfume-art.photo-ready .perfume-illustration{display:none}
     .perfume-art.photo-ready::after{
-      content:"";display:block;width:100%;aspect-ratio:1;align-self:center;justify-self:center;
+      content:"";display:block;width:min(100%,136px);aspect-ratio:1;align-self:center;justify-self:center;
       background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;
       border-radius:14px
     }
@@ -161,43 +161,43 @@
     .collection-primary{color:var(--wine)!important;font-size:.76rem!important;font-weight:800;letter-spacing:.01em;margin:1px 0 8px!important}
     .collection-empty{background:var(--paper);border:1px dashed #c5a4ab;border-radius:16px;padding:22px;font-size:.94rem;color:var(--muted)}
     .collection-empty[hidden]{display:none}
-    .collection-photo{background-image:url("parfum-titia-collection-5.webp");background-repeat:no-repeat;background-size:500% 100%;min-height:245px;background-color:#ead9d3;background-position-y:center;position:relative}
+    .collection-photo{background-image:url("parfum-titia-collection-5.webp");background-repeat:no-repeat;background-size:500% auto;height:210px;min-height:0;align-self:start;background-color:#ead9d3;background-position-y:center;position:relative}
     .collection-photo.photo-0{background-position-x:0%}
     .collection-photo.photo-1{background-position-x:25%}
     .collection-photo.photo-2{background-position-x:50%}
     .collection-photo.photo-3{background-position-x:75%}
     .collection-photo.photo-4{background-position-x:100%}
-    .collection-photo.photo-vanilla-freak{background-image:url("vanilla-freak-lattafa.webp");background-size:cover;background-position:center;background-color:#ead6db}
-    .collection-photo.photo-mallow-madness{background-image:url("mallow-madness-lattafa.webp");background-size:cover;background-position:center;background-color:#e6d8ee}
-    .collection-photo.photo-choco-overdose{background-image:url("choco-overdose-lattafa.webp");background-size:cover;background-position:center;background-color:#b68166}
-    .collection-photo.photo-aoud-purple-rose{background-image:url("aoud-purple-rose-montale.webp");background-size:cover;background-position:center;background-color:#5d2a4c}
+    .collection-photo.photo-vanilla-freak{background-image:url("vanilla-freak-lattafa.webp");background-size:contain;background-position:center;background-color:#ead6db}
+    .collection-photo.photo-mallow-madness{background-image:url("mallow-madness-lattafa.webp");background-size:contain;background-position:center;background-color:#e6d8ee}
+    .collection-photo.photo-choco-overdose{background-image:url("choco-overdose-lattafa.webp");background-size:contain;background-position:center;background-color:#b68166}
+    .collection-photo.photo-aoud-purple-rose{background-image:url("aoud-purple-rose-montale.webp");background-size:contain;background-position:center;background-color:#5d2a4c}
     .collection-photo.photo-atomic-rose{background-image:url("atomic-rose-initio.webp");background-size:contain;background-position:center;background-color:#941e36}
-    .collection-photo.photo-badee-al-oud-amethyst{background-image:url("badee-al-oud-amethyst-lattafa.webp");background-size:cover;background-position:center;background-color:#3b2e48}
-    .collection-photo.photo-floral-sculpture{background-image:url("floral-sculpture-al-haramain.webp");background-size:cover;background-position:center;background-color:#211b26}
-    .collection-photo.photo-sehr-al-sheila{background-image:url("sehr-al-sheila-swiss-arabian.webp");background-size:cover;background-position:center;background-color:#282a2c}
-    .collection-photo.photo-attar-al-sheila{background-image:url("attar-al-sheila-swiss-arabian.webp");background-size:cover;background-position:center;background-color:#312631}
-    .collection-photo.photo-scandal-absolu{background-image:url("scandal-absolu-jean-paul-gaultier.webp");background-size:cover;background-position:center;background-color:#8d2634}
-    .collection-photo.photo-scandal-intense{background-image:url("scandal-intense-jean-paul-gaultier.webp");background-size:cover;background-position:center;background-color:#432035}
-    .collection-photo.photo-ajayeb-dubai-portrait{background-image:url("ajayeb-dubai-portrait-lattafa.webp");background-size:cover;background-position:center;background-color:#e3cda6}
-    .collection-photo.photo-kasoof-white-extract{background-image:url("kasoof-white-extract-asdaaf.webp");background-size:cover;background-position:center;background-color:#e8dfcb}
-    .collection-photo.photo-lattafa-victoria{background-image:url("victoria-lattafa.webp");background-size:cover;background-position:center;background-color:#b7cad1}
-    .collection-photo.photo-voux-zeste-emir{background-image:url("voux-zeste-emir-paris-corner.webp");background-size:cover;background-position:center;background-color:#d8b432}
-    .collection-photo.photo-casamorati-italica{background-image:url("italica-casamorati-xerjoff.webp");background-size:cover;background-position:center;background-color:#77364b}
-    .collection-photo.photo-voux-patisserie{background-image:url("voux-patisserie-emir-paris-corner.webp");background-size:cover;background-position:center;background-color:#dd9f8b}
-    .collection-photo.photo-antiquites-1505{background-image:url("la-collection-antiquites-1505-lattafa-pride.webp");background-size:cover;background-position:center;background-color:#2f3032}
-    .collection-photo.photo-forbidden-love{background-image:url("forbidden-love-maison-alhambra.webp");background-size:cover;background-position:center;background-color:#873d48}
-    .collection-photo.photo-alive-now{background-image:url("alive-now-maison-alhambra.webp");background-size:cover;background-position:center;background-color:#b51b54}
-    .collection-photo.photo-sceptre-desert{background-image:url("sceptre-desert-maison-alhambra.webp");background-size:cover;background-position:center;background-color:#302d2b}
-    .collection-photo.photo-one-million{background-image:url("one-million-rabanne-200ml.webp");background-size:cover;background-position:center;background-color:#b89f6d}
-    .collection-photo.photo-art-of-arabia-iii{background-image:url("art-of-arabia-iii-lattafa-pride.webp");background-size:cover;background-position:center;background-color:#2d2928}
-    .collection-photo.photo-lattafa-oud-mood{background-image:url("oud-mood-lattafa.webp");background-size:cover;background-position:center;background-color:#a34b38}
-    .collection-photo.photo-lattafa-maahir{background-image:url("maahir-lattafa-gold.webp");background-size:cover;background-position:center;background-color:#b39161}
-    .collection-photo.photo-ameer-al-oudh-intense{background-image:url("ameer-al-oudh-intense-oud-lattafa.webp");background-size:cover;background-position:center;background-color:#ac654a}
-    .collection-photo.photo-tarab-crown-prince{background-image:url("tarab-crown-prince-gold.webp");background-size:cover;background-position:center;background-color:#b3945c}
-    .collection-photo.photo-iris-prima{background-image:url("iris-prima-penhaligons.webp");background-size:cover;background-position:center;background-color:#a95554}
+    .collection-photo.photo-badee-al-oud-amethyst{background-image:url("badee-al-oud-amethyst-lattafa.webp");background-size:contain;background-position:center;background-color:#3b2e48}
+    .collection-photo.photo-floral-sculpture{background-image:url("floral-sculpture-al-haramain.webp");background-size:contain;background-position:center;background-color:#211b26}
+    .collection-photo.photo-sehr-al-sheila{background-image:url("sehr-al-sheila-swiss-arabian.webp");background-size:contain;background-position:center;background-color:#282a2c}
+    .collection-photo.photo-attar-al-sheila{background-image:url("attar-al-sheila-swiss-arabian.webp");background-size:contain;background-position:center;background-color:#312631}
+    .collection-photo.photo-scandal-absolu{background-image:url("scandal-absolu-jean-paul-gaultier.webp");background-size:contain;background-position:center;background-color:#8d2634}
+    .collection-photo.photo-scandal-intense{background-image:url("scandal-intense-jean-paul-gaultier.webp");background-size:contain;background-position:center;background-color:#432035}
+    .collection-photo.photo-ajayeb-dubai-portrait{background-image:url("ajayeb-dubai-portrait-lattafa.webp");background-size:contain;background-position:center;background-color:#e3cda6}
+    .collection-photo.photo-kasoof-white-extract{background-image:url("kasoof-white-extract-asdaaf.webp");background-size:contain;background-position:center;background-color:#e8dfcb}
+    .collection-photo.photo-lattafa-victoria{background-image:url("victoria-lattafa.webp");background-size:contain;background-position:center;background-color:#b7cad1}
+    .collection-photo.photo-voux-zeste-emir{background-image:url("voux-zeste-emir-paris-corner.webp");background-size:contain;background-position:center;background-color:#d8b432}
+    .collection-photo.photo-casamorati-italica{background-image:url("italica-casamorati-xerjoff.webp");background-size:contain;background-position:center;background-color:#77364b}
+    .collection-photo.photo-voux-patisserie{background-image:url("voux-patisserie-emir-paris-corner.webp");background-size:contain;background-position:center;background-color:#dd9f8b}
+    .collection-photo.photo-antiquites-1505{background-image:url("la-collection-antiquites-1505-lattafa-pride.webp");background-size:contain;background-position:center;background-color:#2f3032}
+    .collection-photo.photo-forbidden-love{background-image:url("forbidden-love-maison-alhambra.webp");background-size:contain;background-position:center;background-color:#873d48}
+    .collection-photo.photo-alive-now{background-image:url("alive-now-maison-alhambra.webp");background-size:contain;background-position:center;background-color:#b51b54}
+    .collection-photo.photo-sceptre-desert{background-image:url("sceptre-desert-maison-alhambra.webp");background-size:contain;background-position:center;background-color:#302d2b}
+    .collection-photo.photo-one-million{background-image:url("one-million-rabanne-200ml.webp");background-size:contain;background-position:center;background-color:#b89f6d}
+    .collection-photo.photo-art-of-arabia-iii{background-image:url("art-of-arabia-iii-lattafa-pride.webp");background-size:contain;background-position:center;background-color:#2d2928}
+    .collection-photo.photo-lattafa-oud-mood{background-image:url("oud-mood-lattafa.webp");background-size:contain;background-position:center;background-color:#a34b38}
+    .collection-photo.photo-lattafa-maahir{background-image:url("maahir-lattafa-gold.webp");background-size:contain;background-position:center;background-color:#b39161}
+    .collection-photo.photo-ameer-al-oudh-intense{background-image:url("ameer-al-oudh-intense-oud-lattafa.webp");background-size:contain;background-position:center;background-color:#ac654a}
+    .collection-photo.photo-tarab-crown-prince{background-image:url("tarab-crown-prince-gold.webp");background-size:contain;background-position:center;background-color:#b3945c}
+    .collection-photo.photo-iris-prima{background-image:url("iris-prima-penhaligons.webp");background-size:contain;background-position:center;background-color:#a95554}
     /* Quatre photographies du carnet intégrées au classement olfactif. */
     .collection-photo.featured-photo{display:grid;place-items:center;background-image:none;background-color:#f3e8df;padding:8px}
-    .collection-photo.featured-photo::before{content:"";display:block;width:100%;max-width:180px;aspect-ratio:1;background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;border-radius:12px}
+    .collection-photo.featured-photo::before{content:"";display:block;width:100%;max-width:136px;aspect-ratio:1;background-image:url("mes-quatre-parfums.webp");background-repeat:no-repeat;background-size:200% 200%;border-radius:12px}
     .collection-photo.featured-tonka::before{background-position:0% 0%}
     .collection-photo.featured-tobacco::before{background-position:100% 0%}
     .collection-photo.featured-arena::before{background-position:0% 100%}
@@ -228,7 +228,7 @@
     html[lang="en"] .collection-lang-fr{display:none}
     html[lang="en"] .collection-lang-en{display:inline}
     @media(max-width:1000px){.collection-grid{grid-template-columns:1fr}}
-    @media(max-width:560px){.collection-item{grid-template-columns:118px minmax(0,1fr)}.collection-photo{min-height:236px}.collection-copy{padding:15px 13px}.collection-copy h3{font-size:1.19rem}.collection-layering{padding:18px}}
+    @media(max-width:560px){.collection-item{grid-template-columns:118px minmax(0,1fr)}.collection-photo{height:190px;min-height:0}.collection-copy{padding:15px 13px}.collection-copy h3{font-size:1.19rem}.collection-layering{padding:18px}}
     .signature {background:var(--wine-deep);color:#fffaf7;position:relative;overflow:hidden}
     .signature::after {content:"";position:absolute;border:1px solid rgba(255,255,255,.09);width:560px;height:560px;border-radius:50%;right:-180px;top:-170px;box-shadow:0 0 0 100px rgba(255,255,255,.018),0 0 0 220px rgba(255,255,255,.012);pointer-events:none}
     .signature-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:1}
