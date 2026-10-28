@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /suivi-abonnes.html
+
+Sitemap: https://titiaparfum.github.io/Parfum-Titia./sitemap.xml
